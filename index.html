@@ -47,8 +47,29 @@
         }
         
         .hero-section {
-            background: linear-gradient(rgba(11, 39, 48, 0.8), rgba(11, 39, 48, 0.8)), url('https://images.unsplash.com/photo-1516387938699-a93567ec168e?ixlib=rb-4.0.3');
-            /* SUBSTITUA ACIMA pelo link da sua imagem de banner */
+           /* Banner principal com imagens responsivas */
+        .hero-section {
+            background: linear-gradient(rgba(11, 39, 48, 0.7), rgba(11, 39, 48, 0.7)), url('https://github.com/cpirealestate/cpimembership/blob/main/BANNER_HEADER_1920x600.png?raw=true');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-color);
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        /* Tablet */
+        @media (max-width: 1024px) {
+            .hero-section {
+                background: linear-gradient(rgba(11, 39, 48, 0.7), rgba(11, 39, 48, 0.7)), url('https://github.com/cpirealestate/cpimembership/blob/main/BANNER_HEADER_1024x400.png?raw=true');
+            }
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero-section {
+                background: linear-gradient(rgba(11, 39, 48, 0.7), rgba(11, 39, 48, 0.7)), url('https://github.com/cpirealestate/cpimembership/blob/main/BANNER_HEADER_480x600.png?raw=true');
+                padding: 80px 0;
+            }
             background-size: cover;
             background-position: center;
             color: var(--light-color);
