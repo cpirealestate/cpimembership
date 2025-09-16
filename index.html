@@ -78,7 +78,7 @@
         
         .titulo-cpi {
             font-family: var(--fonte-cpi);
-            font-size: 5rem;
+            font-size: 4.5rem;
             letter-spacing: 3px;
             margin-bottom: 0;
             line-height: 1;
@@ -88,7 +88,7 @@
         
         .titulo-membership {
             font-family: var(--fonte-membership);
-            font-size: 4rem;
+            font-size: 3.8rem;
             letter-spacing: 2px;
             margin-top: -0.5rem;
             line-height: 1;
@@ -99,54 +99,55 @@
         /* Ajustes responsivos para o título */
         @media (max-width: 992px) {
             .titulo-cpi {
-                font-size: 4.2rem;
+                font-size: 4rem;
             }
             
             .titulo-membership {
-                font-size: 3.4rem;
+                font-size: 3.2rem;
             }
         }
         
         @media (max-width: 768px) {
             .titulo-cpi {
-                font-size: 3.4rem;
+                font-size: 3.2rem;
                 letter-spacing: 2px;
             }
             
             .titulo-membership {
-                font-size: 2.7rem;
+                font-size: 2.5rem;
                 letter-spacing: 1px;
             }
         }
         
         @media (max-width: 576px) {
             .titulo-cpi {
-                font-size: 2.8rem;
+                font-size: 2.6rem;
             }
             
             .titulo-membership {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
         }
         
-        /* Banner principal com imagens responsivas */
+        /* Banner principal com imagens responsivas - ALTURA REDUZIDA */
         .hero-section {
             background: linear-gradient(rgba(11, 39, 48, 0.7), rgba(11, 39, 48, 0.7)), url('https://raw.githubusercontent.com/cpirealestate/cpimembership/main/BANNER_HEADER_1920x600.png');
             background-size: cover;
             background-position: center;
             color: var(--light-color);
-            padding: 100px 0;
+            padding: 80px 0; /* Reduzido de 100px para 80px */
             position: relative;
             display: flex;
             align-items: center;
-            min-height: 80vh;
+            min-height: 65vh; /* Reduzido de 80vh para 65vh */
         }
         
         /* Tablet */
         @media (max-width: 1024px) {
             .hero-section {
                 background: linear-gradient(rgba(11, 39, 48, 0.7), rgba(11, 39, 48, 0.7)), url('https://raw.githubusercontent.com/cpirealestate/cpimembership/main/BANNER_HEADER_1024x400.png');
-                min-height: 60vh;
+                min-height: 50vh; /* Reduzido de 60vh para 50vh */
+                padding: 70px 0;
             }
         }
         
@@ -154,13 +155,13 @@
         @media (max-width: 768px) {
             .hero-section {
                 background: linear-gradient(rgba(11, 39, 48, 0.7), rgba(11, 39, 48, 0.7)), url('https://raw.githubusercontent.com/cpirealestate/cpimembership/main/BANNER_HEADER_480x600.png');
-                padding: 60px 0;
-                min-height: 70vh;
+                padding: 50px 0; /* Reduzido de 60px para 50px */
+                min-height: 55vh; /* Reduzido de 70vh para 55vh */
             }
         }
         
         .logo-container {
-            margin-bottom: 30px;
+            margin-bottom: 20px; /* Reduzido de 30px para 20px */
         }
         
         .custom-logo {
@@ -340,6 +341,7 @@
                         <div class="card-body text-center">
                             <i class="bi bi-credit-card display-4 text-primary"></i>
                             <h3 class="card-title mt-3">Cartão de Benefícios</h3>
+                            <p class="card-text">Um cartão exclusivo com acesso to
                             <p class="card-text">Um cartão exclusivo com acesso a todos os descontos da nossa rede de parceiros.</p>
                         </div>
                     </div>
@@ -480,7 +482,7 @@
                             <img src="https://via.placeholder.com/150x80/0b2730/fede89?text=Logo+Parceiro" alt="Logo Parceiro" class="partner-logo">
                             <h3 class="card-title">Tech Solutions</h3>
                             <p class="card-text">20% de desconto em serviços de informática. Válido mediante agendamento.</p>
-                            <small class="text-muted">Endereço: Rua da Tecnologia, 789 - Torino</small>
+                            <small class="text-muted">Endereço: Rua da Tecnologia, 789 - Torino</black>
                         </div>
                     </div>
                 </div>
@@ -547,7 +549,7 @@
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button, data-bs-toggle="collapse" data-bs-target="#faq3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
                             Como as empresas podem se tornar parceiras?
                         </button>
                     </h2>
