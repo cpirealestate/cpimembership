@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -549,6 +549,33 @@
             font-weight: 600;
             font-size: 0.9rem;
         }
+        
+        /* Botão de inscrição Wallyfor */
+        .btn-wallyfor {
+            background: linear-gradient(135deg, #d1c087 0%, #e8dcb5 100%);
+            color: var(--primary-color);
+            font-weight: 700;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(209, 192, 135, 0.4);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-wallyfor:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(209, 192, 135, 0.6);
+            color: var(--primary-color);
+        }
+        
+        .wallyfor-icon {
+            font-size: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -793,7 +820,7 @@
                     </h2>
                     <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            L'iscrizione è semplice! Basta compilare il modulo nella sezione "Iscriviti" e attendere l'email di conferma con la tua carta digitale.
+                            L'iscrizione è semplice! Clicca sul pulsante "Iscriviti Ora" nella sezione dedicata e verrai reindirizzato alla nostra piattaforma Wallyfor per completare la registrazione.
                         </div>
                     </div>
                 </div>
@@ -841,39 +868,33 @@
     <section id="iscriviti" class="py-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-10">
+                <div class="col-md-8">
                     <div class="card shadow subscribe-section">
-                        <div class="card-body p-5">
-                            <h2 class="card-title text-center mb-4 text-white">Iscriviti Ora</h2>
-                            <form action="https://formsubmit.co/seu-email@exemplo.com" method="POST">
-                                <input type="hidden" name="_subject" value="Nuova iscrizione CPI Membership">
-                                <input type="hidden" name="_autoresponse" value="Grazie per esserti iscritto a CPI Membership! A breve riceverai la tua carta benefit digitale.">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="nome" class="form-label text-white">Nome</label>
-                                        <input type="text" class="form-control" id="nome" name="nome" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="cognome" class="form-label text-white">Cognome</label>
-                                        <input type="text" class="form-control" id="cognome" name="cognome" required>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label text-white">E-mail</label>
-                                    <input type="email" class="form-control" id="email" name="email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="telefono" class="form-label text-white">Telefono</label>
-                                    <input type="tel" class="form-control" id="telefono" name="telefono">
-                                </div>
-                                <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="termini" name="termini" required>
-                                    <label class="form-check-label text-white" for="termini">Accetto i termini di utilizzo e la politica sulla privacy</label>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-accent btn-lg">Invia Iscrizione</button>
-                                </div>
-                            </form>
+                        <div class="card-body p-5 text-center">
+                            <h2 class="card-title mb-4 text-white">Iscriviti Ora</h2>
+                            <p class="lead text-white mb-4">
+                                Unisciti alla nostra community e inizia a beneficiare degli sconti esclusivi presso i nostri partner.
+                            </p>
+                            
+                            <div class="mb-5">
+                                <h4 class="text-white mb-3">Cosa riceverai:</h4>
+                                <ul class="list-unstyled text-white">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Carta benefit</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Accesso a +30 partner</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Sconti e vantaggi</li>
+                                </ul>
+                            </div>
+                            
+                            <a href="https://www.wallyfor.com/step1.php?ref=854f6fd7df13002b182afcbbfdcaf8e7" 
+                               target="_blank" 
+                               class="btn-wallyfor">
+                               <i class="bi bi-arrow-right-circle wallyfor-icon"></i>
+                               Iscriviti su Wallyfor
+                            </a>
+                            
+                            <p class="text-white-50 mt-3 small">
+                                Verrai reindirizzato alla nostra piattaforma partner Wallyfor per completare la registrazione.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1101,4 +1122,109 @@
             {
                 name: "Fioraio Primavera",
                 discount: "15% OFF",
-                description: "15% di sconto su composizioni floreali. Consegn
+                description: "15% di sconto su composizioni floreali. Consegna a domicilio gratuita.",
+                address: "Via Fiori, 19 - Torino",
+                category: "Fiori"
+            },
+            {
+                name: "Studio Legale Diritto",
+                discount: "10% OFF",
+                description: "10% di sconto su consulenze legali. Prima consulenza gratuita.",
+                address: "Piazza Giustizia, 7 - Torino",
+                category: "Legale"
+            },
+            {
+                name: "Ristorante Sushi Zen",
+                discount: "15% OFF",
+                description: "15% di sconto su menu à la carte. Pesce fresco giornaliero.",
+                address: "Via Oriente, 31 - Torino",
+                category: "Ristorante"
+            },
+            {
+                name: "Centro Benessere Relax",
+                discount: "20% OFF",
+                description: "20% di sconto su massaggi e trattamenti. Ambiente rilassante.",
+                address: "Viale Relax, 27 - Torino",
+                category: "Benessere"
+            },
+            {
+                name: "Negozio Animali Amici",
+                discount: "10% OFF",
+                description: "10% di sconto su cibo e accessori per animali. Consulenza veterinaria.",
+                address: "Via Animali, 63 - Torino",
+                category: "Animali"
+            }
+        ];
+
+        // Função para selecionar 4 parceiros aleatórios
+        function getRandomPartners() {
+            const shuffled = [...allPartners].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, 4);
+        }
+
+        // Função para renderizar os parceiros
+        function renderPartners(partners) {
+            const container = document.getElementById('randomPartnersContainer');
+            container.innerHTML = '';
+            
+            partners.forEach((partner, index) => {
+                const partnerCard = `
+                    <div class="col-md-6 mb-4 fade-in-up delay-${index}">
+                        <div class="card h-100 partner-card">
+                            <div class="discount-badge">${partner.discount}</div>
+                            <div class="card-body text-center p-4">
+                                <img src="https://via.placeholder.com/150x80/0b2730/d1c087?text=${encodeURIComponent(partner.category)}" 
+                                     alt="Logo ${partner.name}" 
+                                     class="partner-logo">
+                                <h3 class="card-title">${partner.name}</h3>
+                                <p class="card-text">${partner.description}</p>
+                                <small class="text-muted">${partner.address}</small>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += partnerCard;
+            });
+        }
+
+        // Inicialização quando o documento estiver pronto
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carrega parceiros aleatórios inicialmente
+            renderPartners(getRandomPartners());
+            
+            // Configura o botão de refresh
+            document.getElementById('refreshPartners').addEventListener('click', function() {
+                renderPartners(getRandomPartners());
+            });
+            
+            // Animação para a navbar quando se scrolla
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    document.querySelector('.navbar').classList.add('scrolled');
+                } else {
+                    document.querySelector('.navbar').classList.remove('scrolled');
+                }
+            });
+            
+            // Animação para os elementos quando entram na viewport
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observa todos os elementos com a classe para animação
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
