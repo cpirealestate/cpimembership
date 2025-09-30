@@ -38,6 +38,7 @@
         body {
             color: #333;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
         }
         
         .bg-primary {
@@ -84,6 +85,7 @@
             line-height: 1;
             text-transform: uppercase;
             font-weight: normal;
+            color: var(--light-color);
         }
         
         .titulo-membership {
@@ -94,6 +96,7 @@
             line-height: 1;
             text-transform: uppercase;
             font-weight: bold;
+            color: var(--accent-color);
         }
         
         /* Ajustes responsivos para o título */
@@ -131,37 +134,37 @@
         
         /* Banner principal com imagens responsivas - ALTURA REDUZIDA */
         .hero-section {
-            background: linear-gradient(rgba(11, 39, 48, 0.7), rgba(11, 39, 48, 0.7)), url('https://raw.githubusercontent.com/cpirealestate/cpimembership/main/BANNER_HEADER_1920x600.png');
+            background: linear-gradient(rgba(11, 39, 48, 0.85), rgba(11, 39, 48, 0.9)), url('https://raw.githubusercontent.com/cpirealestate/cpimembership/main/BANNER_HEADER_1920x600.png');
             background-size: cover;
             background-position: center;
             color: var(--light-color);
-            padding: 80px 0; /* Reduzido de 100px para 80px */
+            padding: 100px 0;
             position: relative;
             display: flex;
             align-items: center;
-            min-height: 65vh; /* Reduzido de 80vh para 65vh */
+            min-height: 75vh;
         }
         
         /* Tablet */
         @media (max-width: 1024px) {
             .hero-section {
-                background: linear-gradient(rgba(11, 39, 48, 0.7), rgba(11, 39, 48, 0.7)), url('https://raw.githubusercontent.com/cpirealestate/cpimembership/main/BANNER_HEADER_1024x400.png');
-                min-height: 50vh; /* Reduzido de 60vh para 50vh */
-                padding: 70px 0;
+                background: linear-gradient(rgba(11, 39, 48, 0.85), rgba(11, 39, 48, 0.9)), url('https://raw.githubusercontent.com/cpirealestate/cpimembership/main/BANNER_HEADER_1024x400.png');
+                min-height: 60vh;
+                padding: 80px 0;
             }
         }
         
         /* Mobile */
         @media (max-width: 768px) {
             .hero-section {
-                background: linear-gradient(rgba(11, 39, 48, 0.7), rgba(11, 39, 48, 0.7)), url('https://raw.githubusercontent.com/cpirealestate/cpimembership/main/BANNER_HEADER_480x600.png');
-                padding: 50px 0; /* Reduzido de 60px para 50px */
-                min-height: 55vh; /* Reduzido de 70vh para 55vh */
+                background: linear-gradient(rgba(11, 39, 48, 0.85), rgba(11, 39, 48, 0.9)), url('https://raw.githubusercontent.com/cpirealestate/cpimembership/main/BANNER_HEADER_480x600.png');
+                padding: 60px 0;
+                min-height: 70vh;
             }
         }
         
         .logo-container {
-            margin-bottom: 20px; /* Reduzido de 30px para 20px */
+            margin-bottom: 20px;
         }
         
         .custom-logo {
@@ -171,25 +174,28 @@
         
         .card {
             border: none;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            overflow: hidden;
         }
         
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
         
         .discount-badge {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 15px;
+            right: 15px;
             background: var(--accent-color);
             color: var(--primary-color);
             font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
         
         .partner-logo {
@@ -199,21 +205,29 @@
         }
         
         .step-number {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             background: var(--primary-color);
             color: var(--light-color);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
+            margin-right: 20px;
             font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
         
         .navbar {
             background-color: var(--light-color) !important;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
         }
         
         .navbar-brand, .nav-link {
@@ -221,19 +235,41 @@
             font-weight: 600;
         }
         
+        .nav-link {
+            position: relative;
+            margin: 0 10px;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
         .nav-link:hover {
-            color: #0a1e25 !important;
+            color: var(--primary-color) !important;
         }
         
         footer {
             background-color: var(--primary-color);
             color: var(--light-color);
-            padding: 40px 0;
+            padding: 60px 0 30px;
         }
         
         footer h5 {
             color: var(--accent-color);
             font-weight: 600;
+            margin-bottom: 20px;
         }
         
         footer a {
@@ -255,8 +291,12 @@
             filter: brightness(0) invert(1);
         }
         
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(209, 192, 135, 0.25);
+        }
+        
         .bg-light {
-            background-color: rgba(254, 222, 137, 0.15) !important;
+            background-color: rgba(209, 192, 135, 0.1) !important;
         }
         
         .highlight-accent {
@@ -273,17 +313,247 @@
             background-color: var(--accent-color);
             color: var(--primary-color);
             font-weight: 600;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
         }
         
         .btn-accent:hover {
-            background-color: #fcd570;
+            background-color: #c4b37d;
             color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(209, 192, 135, 0.4);
+        }
+        
+        .section-title {
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .text-center .section-title h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Estilos para o mapa */
+        .map-container {
+            height: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(11, 39, 48, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .map-container:hover .map-overlay {
+            opacity: 1;
+        }
+        
+        .map-btn {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .map-btn:hover {
+            background: #c4b37d;
+            transform: translateY(-2px);
+        }
+        
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        /* Melhorias para o formulário */
+        .form-control {
+            border-radius: 8px;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.25rem rgba(209, 192, 135, 0.25);
+        }
+        
+        /* Estilos para ícones */
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-color);
+            color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin: 0 auto 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover .feature-icon {
+            transform: scale(1.1);
+            background: var(--accent-color);
+            color: var(--primary-color);
+        }
+        
+        /* Melhorias para cards de parceiros */
+        .partner-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .partner-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--accent-color);
+        }
+        
+        /* Estilo para a seção de inscrição */
+        .subscribe-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0d2e38 100%);
+            color: var(--light-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subscribe-section .card-body {
+            padding: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .subscribe-section .card-body {
+                padding: 30px;
+            }
+        }
+        
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-color);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Botão de refresh para parceiros */
+        .refresh-partners {
+            background: var(--primary-color);
+            color: var(--light-color);
+            border: 2px solid var(--accent-color);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .refresh-partners:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .partner-counter {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="https://github.com/cpirealestate/cpimembership/blob/main/LOGO_MEMBERSHIP.png?raw=true" alt="CPI Membership" height="40">
@@ -295,6 +565,9 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vantaggi">Vantaggi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#come-utilizzare">Come Utilizzare</a>
@@ -319,47 +592,53 @@
             <div class="logo-container">
                 <!-- Espaço reservado para logo adicional se necessário -->
             </div>
-            <div class="titulo-principal">
+            <div class="titulo-principal fade-in-up">
                 <h1 class="titulo-cpi">CPI</h1>
                 <h2 class="titulo-membership">MEMBERSHIP</h2>
             </div>
-            <p class="lead mt-3">Sconti esclusivi per i membri della nostra comunità di Torino.</p>
-            <a href="#inscrever" class="btn btn-accent btn-lg mt-3">Unisciti alla nostra Membership</a>
+            <p class="lead mt-3 mb-4 fade-in-up delay-1">Sconti esclusivi per i membri della nostra comunità di Torino.</p>
+            <a href="#iscriviti" class="btn btn-accent btn-lg mt-3 fade-in-up delay-2">Unisciti alla nostra Membership</a>
         </div>
     </section>
 
     <!-- Benefits Section -->
-    <section class="py-5">
+    <section id="vantaggi" class="py-5">
         <div class="container">
-            <div class="text-center mb-5">
+            <div class="section-title text-center">
                 <h2 class="border-accent">Vantaggi di essere membro</h2>
                 <p class="lead">Accesso a benefit esclusivi in diverse aziende partner.</p>
             </div>
             <div class="row">
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 fade-in-up">
                     <div class="card h-100">
-                        <div class="card-body text-center">
-                            <i class="bi bi-credit-card display-4 text-primary"></i>
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="bi bi-credit-card"></i>
+                            </div>
                             <h3 class="card-title mt-3">Carta Benefit</h3>
                             <p class="card-text">Una carta esclusiva con accesso a tutti gli sconti della nostra rete di partner.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 fade-in-up delay-1">
                     <div class="card h-100">
-                        <div class="card-body text-center">
-                            <i class="bi bi-geo-alt display-4 text-primary"></i>
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
                             <h3 class="card-title mt-3">Multiple location</h3>
                             <p class="card-text">Sconti validi in diverse aziende a Torino e in regione.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 fade-in-up delay-2">
                     <div class="card h-100">
-                        <div class="card-body text-center">
-                            <i class="bi bi-currency-euro display-4 text-primary"></i>
-                            <h3 class="card-title mt-3">Economia Real</h3>
-                            <p class="card-text">Descontos significativos que fazem diferença no seu dia a dia.</p>
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="bi bi-currency-euro"></i>
+                            </div>
+                            <h3 class="card-title mt-3">Risparmio Reale</h3>
+                            <p class="card-text">Sconti significativi che fanno la differenza nella tua vita quotidiana.</p>
                         </div>
                     </div>
                 </div>
@@ -368,37 +647,37 @@
     </section>
 
     <!-- How to Use Section -->
-    <section id="como-usar" class="py-5 bg-light">
+    <section id="come-utilizzare" class="py-5 bg-light">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="border-accent">Como usar seu cartão de benefícios</h2>
-                <p class="lead">Um processo simples em 3 passos</p>
+            <div class="section-title text-center">
+                <h2 class="border-accent">Come usare la tua carta benefit</h2>
+                <p class="lead">Un processo semplice in 3 passi</p>
             </div>
             <div class="row">
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 fade-in-up">
                     <div class="d-flex">
                         <div class="step-number">1</div>
                         <div>
-                            <h4>Inscreva-se</h4>
-                            <p>Preencha o formulário de inscrição e receba seu cartão digital</p>
+                            <h4>Iscriviti</h4>
+                            <p>Compila il modulo di iscrizione e ricevi la tua carta digitale</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 fade-in-up delay-1">
                     <div class="d-flex">
                         <div class="step-number">2</div>
                         <div>
-                            <h4>Escolha o parceiro</h4>
-                            <p>Consulte nossa lista de estabelecimentos participantes</p>
+                            <h4>Scegli il partner</h4>
+                            <p>Consulta la nostra lista di attività partecipanti</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 fade-in-up delay-2">
                     <div class="d-flex">
                         <div class="step-number">3</div>
                         <div>
-                            <h4>Apresente o cartão</h4>
-                            <p>Mostre seu cartão digital ou físico na hora do pagamento</p>
+                            <h4>Mostra la carta</h4>
+                            <p>Mostra la tua carta digitale o fisica al momento del pagamento</p>
                         </div>
                     </div>
                 </div>
@@ -406,34 +685,34 @@
             
             <!-- Instructions for Partners -->
             <div class="mt-5 pt-5">
-                <div class="text-center mb-4">
-                    <h2 class="border-accent">Para Parceiros</h2>
-                    <p class="lead">Como validar os descontos dos membros</p>
+                <div class="section-title text-center">
+                    <h2 class="border-accent">Per i Partner</h2>
+                    <p class="lead">Come validare gli sconti dei membri</p>
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 fade-in-up">
                         <div class="card h-100">
-                            <div class="card-body">
-                                <h4 class="text-primary"><i class="bi bi-phone me-2"></i> Como escanear o código</h4>
+                            <div class="card-body p-4">
+                                <h4 class="text-primary"><i class="bi bi-phone me-2"></i> Come scansionare il codice</h4>
                                 <ol class="mt-3">
-                                    <li>Abra o aplicativo de validação CPI Membership</li>
-                                    <li>Posicione a câmera sobre o código QR do cliente</li>
-                                    <li>Aguarde a confirmação do sistema</li>
-                                    <li>Aplique o desconto conforme indicado</li>
+                                    <li>Apri l'app di validazione CPI Membership</li>
+                                    <li>Posiziona la fotocamera sul codice QR del cliente</li>
+                                    <li>Attendi la conferma del sistema</li>
+                                    <li>Applica lo sconto come indicato</li>
                                 </ol>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 fade-in-up delay-1">
                         <div class="card h-100">
-                            <div class="card-body">
-                                <h4 class="text-primary"><i class="bi bi-info-circle me-2"></i> Informações importantes</h4>
+                            <div class="card-body p-4">
+                                <h4 class="text-primary"><i class="bi bi-info-circle me-2"></i> Informazioni importanti</h4>
                                 <ul class="mt-3">
-                                    <li>Verifique sempre a validade do cartão</li>
-                                    <li>Certifique-se de que o cliente é o titular do cartão</li>
-                                    <li>Em caso de problemas, entre em contato com o suporte</li>
-                                    <li>Descontos não são cumulativos com outras promoções</li>
+                                    <li>Verifica sempre la validità della carta</li>
+                                    <li>Assicurati che il cliente sia il titolare della carta</li>
+                                    <li>In caso di problemi, contatta il supporto</li>
+                                    <li>Gli sconti non sono cumulativi con altre promozioni</li>
                                 </ul>
                             </div>
                         </div>
@@ -444,71 +723,55 @@
     </section>
 
     <!-- Partners Section -->
-    <section id="parceiros" class="py-5">
+    <section id="partners" class="py-5">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="border-accent">Nossos Parceiros</h2>
-                <p class="lead">Empresas que oferecem descontos exclusivos para membros</p>
-            </div>
-            
-            <div class="row mb-5">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="discount-badge">15% OFF</div>
-                        <div class="card-body text-center">
-                            <img src="https://via.placeholder.com/150x80/0b2730/d1c087?text=Logo+Parceiro" alt="Logo Parceiro" class="partner-logo">
-                            <h3 class="card-title">Restaurante Bella Torino</h3>
-                            <p class="card-text">Desconto de 15% em todos os pratos. Válido de segunda a quinta.</p>
-                            <small class="text-muted">Endereço: Rua Exemplo, 123 - Centro, Torino</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="discount-badge">10% OFF</div>
-                        <div class="card-body text-center">
-                            <img src="https://via.placeholder.com/150x80/0b2730/d1c087?text=Logo+Parceiro" alt="Logo Parceiro" class="partner-logo">
-                            <h3 class="card-title">Moda Italiana Store</h3>
-                            <p class="card-text">10% de desconto em toda a loja. Válido todos os dias.</p>
-                            <small class="text-muted">Endereço: Av. Principal, 456 - Torino</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="discount-badge">20% OFF</div>
-                        <div class="card-body text-center">
-                            <img src="https://via.placeholder.com/150x80/0b2730/d1c087?text=Logo+Parceiro" alt="Logo Parceiro" class="partner-logo">
-                            <h3 class="card-title">Tech Solutions</h3>
-                            <p class="card-text">20% de desconto em serviços de informática. Válido mediante agendamento.</p>
-                            <small class="text-muted">Endereço: Rua da Tecnologia, 789 - Torino</black>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="discount-badge">5% OFF</div>
-                        <div class="card-body text-center">
-                            <img src="https://via.placeholder.com/150x80/0b2730/d1c087?text=Logo+Parceiro" alt="Logo Parceiro" class="partner-logo">
-                            <h3 class="card-title">Supermercado Preço Bom</h3>
-                            <p class="card-text">5% de desconto em compras acima de €50. Válido todos os dias.</p>
-                            <small class="text-muted">Endereço: Praça Central, 101 - Torino</small>
-                        </div>
-                    </div>
+            <div class="section-title text-center">
+                <h2 class="border-accent">I Nostri Partner</h2>
+                <p class="lead">Aziende che offrono sconti esclusivi per i membri</p>
+                <div class="mt-3">
+                    <span class="partner-counter">+30 Partner</span>
                 </div>
             </div>
             
+            <!-- Botão para atualizar parceiros -->
             <div class="text-center mb-4">
-                <h3 class="border-accent">Mapa de Localizações</h3>
-                <p>Encontre todas as empresas parceiras próximas a você</p>
+                <button id="refreshPartners" class="refresh-partners">
+                    <i class="bi bi-arrow-clockwise"></i> Mostra Altri Partner
+                </button>
+                <p class="text-muted mt-2 small">Clicca per scoprire nuovi partner ogni volta!</p>
             </div>
             
-            <!-- Google Maps Placeholder -->
-            <div class="bg-light text-center p-5 rounded" style="background-color: #f8f9fa!important;">
-                <i class="bi bi-map display-4 text-primary mb-3"></i>
-                <h4>Mapa Interativo</h4>
-                <p>Este espaço conterá um mapa do Google Maps com todas as localizações dos parceiros</p>
-                <p class="small text-muted">Para integrar: 1. Crie uma conta no Google Cloud Platform, 2. Ative o Maps JavaScript API, 3. Adicione sua chave API no código</p>
+            <!-- Container para os parceiros randomicos -->
+            <div id="randomPartnersContainer" class="row mb-5">
+                <!-- Os parceiros serão carregados aqui via JavaScript -->
+            </div>
+            
+            <div class="section-title text-center">
+                <h2 class="border-accent">Mappa delle Località</h2>
+                <p>Trova tutte le aziende partner vicino a te</p>
+            </div>
+            
+            <!-- Mappa Google Maps Integrada -->
+            <div class="map-container fade-in-up">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=18-Y3wiqmKA446GwZwX0F1qW-gS9grps&ehbc=2E312F&z=15" 
+                        width="100%" 
+                        height="500"
+                        loading="lazy">
+                </iframe>
+                <div class="map-overlay">
+                    <a href="https://www.google.com/maps/d/u/0/viewer?ll=45.04215070206699%2C7.69256091483737&z=15&mid=18-Y3wiqmKA446GwZwX0F1qW-gS9grps" 
+                       target="_blank" 
+                       class="map-btn">
+                       <i class="bi bi-arrows-fullscreen me-2"></i>Apri Mappa Completa
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <p class="text-muted">
+                    <i class="bi bi-info-circle me-2"></i>
+                    Clicca sul pulsante "Apri Mappa Completa" per visualizzare la mappa interattiva in una nuova finestra
+                </p>
             </div>
         </div>
     </section>
@@ -516,69 +779,57 @@
     <!-- FAQ Section -->
     <section id="faq" class="py-5 bg-light">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="border-accent">Perguntas Frequentes</h2>
-                <p class="lead">Tire suas dúvidas sobre o CPI Membership</p>
+            <div class="section-title text-center">
+                <h2 class="border-accent">Domande Frequenti</h2>
+                <p class="lead">Risposte alle tue domande su CPI Membership</p>
             </div>
             
             <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
+                <div class="accordion-item fade-in-up">
                     <h2 class="accordion-header">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                            Como faço para me inscrever?
+                            Come faccio per iscrivermi?
                         </button>
                     </h2>
                     <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            A inscrição é simples! Basta preencher o formulário na seção "Inscrever-se" e aguardar o e-mail de confirmação com seu cartão digital.
+                            L'iscrizione è semplice! Basta compilare il modulo nella sezione "Iscriviti" e attendere l'email di conferma con la tua carta digitale.
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item fade-in-up delay-1">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                            O cartão tem custo?
+                            La carta ha un costo?
                         </button>
                     </h2>
                     <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Não! A adesão ao programa CPI Membership é totalmente gratuita para todos os participantes.
+                            No! L'adesione al programma CPI Membership è totalmente gratuita per tutti i partecipanti.
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item fade-in-up delay-2">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                            Como as empresas podem se tornar parceiras?
+                            Come possono le aziende diventare partner?
                         </button>
                     </h2>
                     <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Empresas interessadas em participar podem entrar em contato através do e-mail parcerias@cpimembership.it para conhecer os benefícios e condições.
+                            Le aziende interessate a partecipare possono contattarci all'indirizzo email parcerias@cpimembership.it per conoscere i benefici e le condizioni.
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item fade-in-up delay-3">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                            Os descontos são cumulativos com outras promoções?
+                            Gli sconti sono cumulativi con altre promozioni?
                         </button>
                     </h2>
                     <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Não, os descontos do CPI Membership não são cumulativos com outras promoções em vigor nas empresas parceiras.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
-                            Como faço para renover minha membership?
-                        </button>
-                    </h2>
-                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            A membership é renovada automaticamente. Você receberá um e-mail de confirmação 30 dias antes da data de expiração.
+                            No, gli sconti di CPI Membership non sono cumulativi con altre promozioni in vigore presso le aziende partner.
                         </div>
                     </div>
                 </div>
@@ -587,38 +838,40 @@
     </section>
 
     <!-- Subscribe Section -->
-    <section id="inscrever" class="py-5">
+    <section id="iscriviti" class="py-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card shadow">
+                <div class="col-md-10">
+                    <div class="card shadow subscribe-section">
                         <div class="card-body p-5">
-                            <h2 class="card-title text-center mb-4">Inscreva-se agora</h2>
-                            <form>
+                            <h2 class="card-title text-center mb-4 text-white">Iscriviti Ora</h2>
+                            <form action="https://formsubmit.co/seu-email@exemplo.com" method="POST">
+                                <input type="hidden" name="_subject" value="Nuova iscrizione CPI Membership">
+                                <input type="hidden" name="_autoresponse" value="Grazie per esserti iscritto a CPI Membership! A breve riceverai la tua carta benefit digitale.">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="nome" class="form-label">Nome</label>
-                                        <input type="text" class="form-control" id="nome" required>
+                                        <label for="nome" class="form-label text-white">Nome</label>
+                                        <input type="text" class="form-control" id="nome" name="nome" required>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="sobrenome" class="form-label">Sobrenome</label>
-                                        <input type="text" class="form-control" id="sobrenome" required>
+                                        <label for="cognome" class="form-label text-white">Cognome</label>
+                                        <input type="text" class="form-control" id="cognome" name="cognome" required>
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">E-mail</label>
-                                    <input type="email" class="form-control" id="email" required>
+                                    <label for="email" class="form-label text-white">E-mail</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="telefone" class="form-label">Telefone</label>
-                                    <input type="tel" class="form-control" id="telefone">
+                                    <label for="telefono" class="form-label text-white">Telefono</label>
+                                    <input type="tel" class="form-control" id="telefono" name="telefono">
                                 </div>
                                 <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="termos" required>
-                                    <label class="form-check-label" for="termos">Aceito os termos de uso e política de privacidade</label>
+                                    <input type="checkbox" class="form-check-input" id="termini" name="termini" required>
+                                    <label class="form-check-label text-white" for="termini">Accetto i termini di utilizzo e la politica sulla privacy</label>
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar Inscrição</button>
+                                    <button type="submit" class="btn btn-accent btn-lg">Invia Iscrizione</button>
                                 </div>
                             </form>
                         </div>
@@ -634,30 +887,218 @@
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <h5><i class="bi bi-stars me-2"></i>CPI Membership</h5>
-                    <p>Uma comunidade de benefícios exclusivos para membros em Torino.</p>
+                    <p>Una comunità di benefici esclusivi per i membri a Torino.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-whatsapp"></i></a>
+                    </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <h5>Links Rápidos</h5>
+                    <h5>Link Rapidi</h5>
                     <ul class="list-unstyled">
                         <li><a href="#home" class="text-decoration-none">Home</a></li>
-                        <li><a href="#como-usar" class="text-decoration-none">Como Usar</a></li>
-                        <li><a href="#parceiros" class="text-decoration-none">Parceiros</a></li>
+                        <li><a href="#vantaggi" class="text-decoration-none">Vantaggi</a></li>
+                        <li><a href="#come-utilizzare" class="text-decoration-none">Come Utilizzare</a></li>
+                        <li><a href="#partners" class="text-decoration-none">Partner</a></li>
                         <li><a href="#faq" class="text-decoration-none">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <h5>Contato</h5>
+                    <h5>Contatto</h5>
                     <p><i class="bi bi-envelope me-2"></i>Email: info@cpimembership.it<br>
-                    <i class="bi bi-telephone me-2"></i>Telefone: +39 0123 456789</p>
+                    <i class="bi bi-telephone me-2"></i>Telefono: +39 0123 456789</p>
+                    <p><i class="bi bi-geo-alt me-2"></i>Indirizzo: Via Torino, 123 - 10100 Torino, Italia</p>
                 </div>
             </div>
             <hr>
             <div class="text-center">
-                <p class="mb-0">&copy; 2023 CPI Membership. Todos os direitos reservados.</p>
+                <p class="mb-0">&copy; 2023 CPI Membership. Tutti i diritti riservati.</p>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    <script>
+        // Base de dados de parceiros (30+ parceiros)
+        const allPartners = [
+            {
+                name: "Ristorante Bella Torino",
+                discount: "15% OFF",
+                description: "Sconto del 15% su tutti i piatti. Valido da lunedì a giovedì.",
+                address: "Via Example, 123 - Centro, Torino",
+                category: "Ristorante"
+            },
+            {
+                name: "Moda Italiana Store",
+                discount: "10% OFF",
+                description: "10% di sconto in tutto il negozio. Valido tutti i giorni.",
+                address: "Corso Principale, 456 - Torino",
+                category: "Moda"
+            },
+            {
+                name: "Tech Solutions",
+                discount: "20% OFF",
+                description: "20% di sconto sui servizi informatici. Valido su appuntamento.",
+                address: "Via della Tecnologia, 789 - Torino",
+                category: "Tecnologia"
+            },
+            {
+                name: "Supermercato Prezzo Buono",
+                discount: "5% OFF",
+                description: "5% di sconto sugli acquisti superiori a €50. Valido tutti i giorni.",
+                address: "Piazza Centrale, 101 - Torino",
+                category: "Supermercato"
+            },
+            {
+                name: "Caffè Roma",
+                discount: "20% OFF",
+                description: "20% di sconto su colazioni e pranzi. Valido tutti i giorni.",
+                address: "Via Roma, 55 - Torino",
+                category: "Caffè"
+            },
+            {
+                name: "Palestra Fitness Center",
+                discount: "15% OFF",
+                description: "15% di sconto sull'abbonamento mensile. Prima visita gratuita.",
+                address: "Viale Sport, 88 - Torino",
+                category: "Fitness"
+            },
+            {
+                name: "Libreria Cultura",
+                discount: "10% OFF",
+                description: "10% di sconto su tutti i libri. Eventi culturali inclusi.",
+                address: "Piazza Cultura, 12 - Torino",
+                category: "Libri"
+            },
+            {
+                name: "Farmacia Benessere",
+                discount: "8% OFF",
+                description: "8% di sconto su prodotti da farmacia. Consulenza gratuita.",
+                address: "Corso Salute, 33 - Torino",
+                category: "Farmacia"
+            },
+            {
+                name: "Auto Service Torino",
+                discount: "12% OFF",
+                description: "12% di sconto su tagliandi e riparazioni. Servizio rapido.",
+                address: "Via Meccanici, 77 - Torino",
+                category: "Auto"
+            },
+            {
+                name: "Hotel Comfort",
+                discount: "15% OFF",
+                description: "15% di sconto su tutte le prenotazioni. Colazione inclusa.",
+                address: "Lungo Po, 25 - Torino",
+                category: "Hotel"
+            },
+            {
+                name: "Cinema Paradiso",
+                discount: "25% OFF",
+                description: "25% di sconto sui biglietti. Valido tutti i giorni escluso weekend.",
+                address: "Via Cinema, 9 - Torino",
+                category: "Intrattenimento"
+            },
+            {
+                name: "Pizzeria Napoli",
+                discount: "15% OFF",
+                description: "15% di sconto su pizze e antipasti. Forno a legna tradizionale.",
+                address: "Via Napoli, 44 - Torino",
+                category: "Ristorante"
+            },
+            {
+                name: "Centro Estetico Bellezza",
+                discount: "20% OFF",
+                description: "20% di sconto su trattamenti viso e corpo. Prima consulenza gratuita.",
+                address: "Viale Bellezza, 15 - Torino",
+                category: "Estetica"
+            },
+            {
+                name: "Mercato Frutta Fresca",
+                discount: "10% OFF",
+                description: "10% di sconto su frutta e verdura di stagione. Prodotti locali.",
+                address: "Mercato Centrale, 22 - Torino",
+                category: "Alimentari"
+            },
+            {
+                name: "Studio Dentistico Sorriso",
+                discount: "15% OFF",
+                description: "15% di sconto su igiene dentale e controlli. Tecnologia all'avanguardia.",
+                address: "Piazza Salute, 18 - Torino",
+                category: "Salute"
+            },
+            {
+                name: "Negozio Sportivo",
+                discount: "12% OFF",
+                description: "12% di sconto su attrezzatura sportiva. Consulenza specialistica.",
+                address: "Via Atleti, 66 - Torino",
+                category: "Sport"
+            },
+            {
+                name: "Pasticceria Dolce Vita",
+                discount: "15% OFF",
+                description: "15% di sconto su torte e pasticceria. Prodotti artigianali.",
+                address: "Corso Dolce, 29 - Torino",
+                category: "Dolci"
+            },
+            {
+                name: "Lavanderia Express",
+                discount: "20% OFF",
+                description: "20% di sconto sul servizio lavanderia. Ritiro e consegna a domicilio.",
+                address: "Via Puliti, 37 - Torino",
+                category: "Servizi"
+            },
+            {
+                name: "Gioielleria Luce",
+                discount: "10% OFF",
+                description: "10% di sconto su gioielli e orologi. Design esclusivo.",
+                address: "Piazza Gioielli, 5 - Torino",
+                category: "Gioielli"
+            },
+            {
+                name: "Parrucchiere Stile",
+                discount: "15% OFF",
+                description: "15% di sconto su tagli e colorazioni. Stilisti professionisti.",
+                address: "Viale Moda, 41 - Torino",
+                category: "Bellezza"
+            },
+            {
+                name: "Agente Immobiliare Casa",
+                discount: "1% OFF",
+                description: "1% di sconto sulla commissione agenzia. Valutazione gratuita.",
+                address: "Corso Immobiliare, 88 - Torino",
+                category: "Immobiliare"
+            },
+            {
+                name: "Scuola Guida Sicura",
+                discount: "10% OFF",
+                description: "10% di sconto sui corsi di guida. Istruttori qualificati.",
+                address: "Via Patenti, 23 - Torino",
+                category: "Formazione"
+            },
+            {
+                name: "Enoteca Vini Pregiati",
+                discount: "12% OFF",
+                description: "12% di sconto su vini italiani e internazionali. Degustazioni gratuite.",
+                address: "Piazza Vino, 14 - Torino",
+                category: "Vini"
+            },
+            {
+                name: "Centro Yoga Armonia",
+                discount: "20% OFF",
+                description: "20% di sconto su corsi di yoga e meditazione. Lezione prova gratuita.",
+                address: "Via Armonia, 8 - Torino",
+                category: "Benessere"
+            },
+            {
+                name: "Officina Meccanica",
+                discount: "15% OFF",
+                description: "15% di sconto su riparazioni e ricambi. Garanzia su tutti i lavori.",
+                address: "Via Officina, 52 - Torino",
+                category: "Auto"
+            },
+            {
+                name: "Fioraio Primavera",
+                discount: "15% OFF",
+                description: "15% di sconto su composizioni floreali. Consegn
