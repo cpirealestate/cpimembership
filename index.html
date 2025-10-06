@@ -198,11 +198,27 @@
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
         
-        .partner-logo {
-            height: 80px;
-            object-fit: contain;
-            margin: 15px 0;
+        /* ===== ATUALIZAÇÕES PARA AS LOGOS DOS PARCEIROS ===== */
+        .partner-logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 140px; /* Altura fixa do container */
+            margin: 20px 0;
+            padding: 15px;
+            background-color: var(--light-color);
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
         }
+
+        .partner-logo {
+            max-height: 120px; /* Altura máxima */
+            max-width: 280px;  /* Largura máxima */
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        /* ===== FIM DAS ATUALIZAÇÕES PARA LOGOS ===== */
         
         .step-number {
             width: 50px;
@@ -476,6 +492,37 @@
             height: 5px;
             background: var(--accent-color);
         }
+
+        /* ===== NOVOS ESTILOS PARA CONTATOS DOS PARCEIROS ===== */
+        .partner-contacts {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .partner-contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .partner-contact-item i {
+            width: 20px;
+            margin-right: 8px;
+            color: var(--accent-color);
+        }
+
+        .partner-contact-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .partner-contact-link:hover {
+            color: var(--accent-color);
+        }
+        /* ===== FIM DOS NOVOS ESTILOS ===== */
         
         /* Estilo para a seção de inscrição */
         .subscribe-section {
@@ -797,7 +844,7 @@
             <div class="text-center mt-4">
                 <p class="text-muted">
                     <i class="bi bi-info-circle me-2"></i>
-                    Clicca sul pulsante "Apri Mappa Completa" per visualizzare la mappa interattiva in una nuova finestra
+                    Clicca sul pulsante "Apri Mappa Completa" per visualizzare la mappa interattiva in uma nuova finestra
                 </p>
             </div>
         </div>
@@ -844,7 +891,7 @@
                     </h2>
                     <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Le aziende interessate a partecipare possono contattarci all'indirizzo email parcerias@cpimembership.it per conoscere i benefici e le condizioni.
+                            Le aziende interessate a partecipare possono contattarci all'indirizzo email office@cpirealestate.it per conoscere i benefici e le condizioni.
                         </div>
                     </div>
                 </div>
@@ -928,238 +975,67 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <h5>Contatto</h5>
-                    <p><i class="bi bi-envelope me-2"></i>Email: info@cpimembership.it<br>
+                    <p><i class="bi bi-envelope me-2"></i>Email: office@cpirealestate.it<br>
                     <i class="bi bi-telephone me-2"></i>Telefono: +39 0123 456789</p>
-                    <p><i class="bi bi-geo-alt me-2"></i>Indirizzo: Via Torino, 123 - 10100 Torino, Italia</p>
+                    <p><i class="bi bi-geo-alt me-2"></i>Indirizzo: Via Giovanni Giolitti, 54 - Torino, Italia</p>
                 </div>
             </div>
             <hr>
             <div class="text-center">
-                <p class="mb-0">&copy; 2025 - CPI Membership. Tutti i diritti riservati.</p>
+                <p class="mb-0">&copy; 2025 CPI Membership. Tutti i diritti riservati.</p>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Base de dados de parceiros (30+ parceiros)
+        // ============================================================================
+        // BASE DE DADOS DOS PARCEIROS - ATUALIZADA COM NOVOS CAMPOS
+        // ============================================================================
+        
         const allPartners = [
             {
                 name: "Asole Store",
                 discount: "10% OFF",
                 description: "Sconto del 10% sul primo acquisto su tutti i prodotti",
                 address: "Via Giovanni Giolitti, 3 - Torino",
-                category: "MODA"
+                category: "Ristorante",
+                // ⬇️⬇️⬇️ SUBSTITUA ESTA URL PELA URL REAL DA LOGO NO GITHUB ⬇️⬇️⬇️
+                logoUrl: "https://github.com/cpirealestate/cpimembership/blob/main/assets/ASOLE_STORE.png",
+                // ⬇️⬇️⬇️ NOVOS CAMPOS - SITE E TELEFONE ⬇️⬇️⬇️
+                website: "asolestore.com",
+                phone: "+39 011 1938 5984"
             },
             {
                 name: "Moda Italiana Store",
                 discount: "10% OFF",
                 description: "10% di sconto in tutto il negozio. Valido tutti i giorni.",
                 address: "Corso Principale, 456 - Torino",
-                category: "Moda"
-            },
-            {
-                name: "Tech Solutions",
-                discount: "20% OFF",
-                description: "20% di sconto sui servizi informatici. Valido su appuntamento.",
-                address: "Via della Tecnologia, 789 - Torino",
-                category: "Tecnologia"
-            },
-            {
-                name: "Supermercato Prezzo Buono",
-                discount: "5% OFF",
-                description: "5% di sconto sugli acquisti superiori a €50. Valido tutti i giorni.",
-                address: "Piazza Centrale, 101 - Torino",
-                category: "Supermercato"
-            },
-            {
-                name: "Caffè Roma",
-                discount: "20% OFF",
-                description: "20% di sconto su colazioni e pranzi. Valido tutti i giorni.",
-                address: "Via Roma, 55 - Torino",
-                category: "Caffè"
-            },
-            {
-                name: "Palestra Fitness Center",
-                discount: "15% OFF",
-                description: "15% di sconto sull'abbonamento mensile. Prima visita gratuita.",
-                address: "Viale Sport, 88 - Torino",
-                category: "Fitness"
-            },
-            {
-                name: "Libreria Cultura",
-                discount: "10% OFF",
-                description: "10% di sconto su tutti i libri. Eventi culturali inclusi.",
-                address: "Piazza Cultura, 12 - Torino",
-                category: "Libri"
-            },
-            {
-                name: "Farmacia Benessere",
-                discount: "8% OFF",
-                description: "8% di sconto su prodotti da farmacia. Consulenza gratuita.",
-                address: "Corso Salute, 33 - Torino",
-                category: "Farmacia"
-            },
-            {
-                name: "Auto Service Torino",
-                discount: "12% OFF",
-                description: "12% di sconto su tagliandi e riparazioni. Servizio rapido.",
-                address: "Via Meccanici, 77 - Torino",
-                category: "Auto"
-            },
-            {
-                name: "Hotel Comfort",
-                discount: "15% OFF",
-                description: "15% di sconto su tutte le prenotazioni. Colazione inclusa.",
-                address: "Lungo Po, 25 - Torino",
-                category: "Hotel"
-            },
-            {
-                name: "Cinema Paradiso",
-                discount: "25% OFF",
-                description: "25% di sconto sui biglietti. Valido tutti i giorni escluso weekend.",
-                address: "Via Cinema, 9 - Torino",
-                category: "Intrattenimento"
-            },
-            {
-                name: "Pizzeria Napoli",
-                discount: "15% OFF",
-                description: "15% di sconto su pizze e antipasti. Forno a legna tradizionale.",
-                address: "Via Napoli, 44 - Torino",
-                category: "Ristorante"
-            },
-            {
-                name: "Centro Estetico Bellezza",
-                discount: "20% OFF",
-                description: "20% di sconto su trattamenti viso e corpo. Prima consulenza gratuita.",
-                address: "Viale Bellezza, 15 - Torino",
-                category: "Estetica"
-            },
-            {
-                name: "Mercato Frutta Fresca",
-                discount: "10% OFF",
-                description: "10% di sconto su frutta e verdura di stagione. Prodotti locali.",
-                address: "Mercato Centrale, 22 - Torino",
-                category: "Alimentari"
-            },
-            {
-                name: "Studio Dentistico Sorriso",
-                discount: "15% OFF",
-                description: "15% di sconto su igiene dentale e controlli. Tecnologia all'avanguardia.",
-                address: "Piazza Salute, 18 - Torino",
-                category: "Salute"
-            },
-            {
-                name: "Negozio Sportivo",
-                discount: "12% OFF",
-                description: "12% di sconto su attrezzatura sportiva. Consulenza specialistica.",
-                address: "Via Atleti, 66 - Torino",
-                category: "Sport"
-            },
-            {
-                name: "Pasticceria Dolce Vita",
-                discount: "15% OFF",
-                description: "15% di sconto su torte e pasticceria. Prodotti artigianali.",
-                address: "Corso Dolce, 29 - Torino",
-                category: "Dolci"
-            },
-            {
-                name: "Lavanderia Express",
-                discount: "20% OFF",
-                description: "20% di sconto sul servizio lavanderia. Ritiro e consegna a domicilio.",
-                address: "Via Puliti, 37 - Torino",
-                category: "Servizi"
-            },
-            {
-                name: "Gioielleria Luce",
-                discount: "10% OFF",
-                description: "10% di sconto su gioielli e orologi. Design esclusivo.",
-                address: "Piazza Gioielli, 5 - Torino",
-                category: "Gioielli"
-            },
-            {
-                name: "Parrucchiere Stile",
-                discount: "15% OFF",
-                description: "15% di sconto su tagli e colorazioni. Stilisti professionisti.",
-                address: "Viale Moda, 41 - Torino",
-                category: "Bellezza"
-            },
-            {
-                name: "Agente Immobiliare Casa",
-                discount: "1% OFF",
-                description: "1% di sconto sulla commissione agenzia. Valutazione gratuita.",
-                address: "Corso Immobiliare, 88 - Torino",
-                category: "Immobiliare"
-            },
-            {
-                name: "Scuola Guida Sicura",
-                discount: "10% OFF",
-                description: "10% di sconto sui corsi di guida. Istruttori qualificati.",
-                address: "Via Patenti, 23 - Torino",
-                category: "Formazione"
-            },
-            {
-                name: "Enoteca Vini Pregiati",
-                discount: "12% OFF",
-                description: "12% di sconto su vini italiani e internazionali. Degustazioni gratuite.",
-                address: "Piazza Vino, 14 - Torino",
-                category: "Vini"
-            },
-            {
-                name: "Centro Yoga Armonia",
-                discount: "20% OFF",
-                description: "20% di sconto su corsi di yoga e meditazione. Lezione prova gratuita.",
-                address: "Via Armonia, 8 - Torino",
-                category: "Benessere"
-            },
-            {
-                name: "Officina Meccanica",
-                discount: "15% OFF",
-                description: "15% di sconto su riparazioni e ricambi. Garanzia su tutti i lavori.",
-                address: "Via Officina, 52 - Torino",
-                category: "Auto"
-            },
-            {
-                name: "Fioraio Primavera",
-                discount: "15% OFF",
-                description: "15% di sconto su composizioni floreali. Consegna a domicilio gratuita.",
-                address: "Via Fiori, 19 - Torino",
-                category: "Fiori"
-            },
-            {
-                name: "Studio Legale Diritto",
-                discount: "10% OFF",
-                description: "10% di sconto su consulenze legali. Prima consulenza gratuita.",
-                address: "Piazza Giustizia, 7 - Torino",
-                category: "Legale"
-            },
-            {
-                name: "Ristorante Sushi Zen",
-                discount: "15% OFF",
-                description: "15% di sconto su menu à la carte. Pesce fresco giornaliero.",
-                address: "Via Oriente, 31 - Torino",
-                category: "Ristorante"
-            },
-            {
-                name: "Centro Benessere Relax",
-                discount: "20% OFF",
-                description: "20% di sconto su massaggi e trattamenti. Ambiente rilassante.",
-                address: "Viale Relax, 27 - Torino",
-                category: "Benessere"
-            },
-            {
-                name: "Negozio Animali Amici",
-                discount: "10% OFF",
-                description: "10% di sconto su cibo e accessori per animali. Consulenza veterinaria.",
-                address: "Via Animali, 63 - Torino",
-                category: "Animali"
-            }
-        ];
+                category: "Moda",
+                // ⬇️⬇️⬇️ SUBSTITUA ESTA URL PELA URL REAL DA LOGO NO GITHUB ⬇️⬇️⬇️
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/images/logos/partners/moda-italiana-store.png",
+                // ⬇️⬇️⬇️ NOVOS CAMPOS - SITE E TELEFONE ⬇️⬇️⬇️
+                website: "https://www.modaita
+        // ============================================================================
+        // FIM DA BASE DE DADOS - NÃO PRECISA ALTERAR O CÓDIGO ABAIXO
+        // ============================================================================
 
         // Função para selecionar 4 parceiros aleatórios
         function getRandomPartners() {
             const shuffled = [...allPartners].sort(() => 0.5 - Math.random());
             return shuffled.slice(0, 4);
+        }
+
+        // Função para determinar a classe CSS baseada no tipo de logo
+        function getLogoClass(logoType) {
+            switch(logoType) {
+                case 'square':
+                    return 'partner-logo square-logo';
+                case 'vertical':
+                    return 'partner-logo vertical-logo';
+                default:
+                    return 'partner-logo';
+            }
         }
 
         // Função para renderizar os parceiros
@@ -1168,15 +1044,19 @@
             container.innerHTML = '';
             
             partners.forEach((partner, index) => {
+                const logoClass = getLogoClass(partner.logoType);
                 const partnerCard = `
                     <div class="col-md-6 mb-4 fade-in-up delay-${index}">
                         <div class="card h-100 partner-card">
                             <div class="discount-badge">${partner.discount}</div>
                             <div class="card-body text-center p-4">
-                                <img src="https://via.placeholder.com/150x80/0b2730/d1c087?text=${encodeURIComponent(partner.category)}" 
-                                     alt="Logo ${partner.name}" 
-                                     class="partner-logo">
-                                <h3 class="card-title">${partner.name}</h3>
+                                <div class="partner-logo-container">
+                                    <img src="${partner.logoUrl}" 
+                                         alt="Logo ${partner.name}" 
+                                         class="${logoClass}"
+                                         loading="lazy">
+                                </div>
+                                <h3 class="card-title mt-3">${partner.name}</h3>
                                 <p class="card-text">${partner.description}</p>
                                 <small class="text-muted">${partner.address}</small>
                             </div>
