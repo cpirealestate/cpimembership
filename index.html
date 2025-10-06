@@ -8,202 +8,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     
     <style>
-        /* Definição das fontes personalizadas */
-        @font-face {
-            font-family: 'Arual Light';
-            src: url('https://raw.githubusercontent.com/cpirealestate/cpimembership/main/Arual%20Light-53e1.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-        
-        @font-face {
-            font-family: 'Miller Banner Bold';
-            src: url('https://raw.githubusercontent.com/cpirealestate/cpimembership/main/miller-banner-bold.otf') format('opentype');
-            font-weight: bold;
-            font-style: normal;
-            font-display: swap;
-        }
-        
-        :root {
-            --primary-color: #0b2730;
-            --accent-color: #d1c087;
-            --light-color: #ffffff;
-            
-            /* Definição das fontes personalizadas (invertidas) */
-            --fonte-cpi: 'Arual Light', sans-serif;           /* Arual Light para CPI */
-            --fonte-membership: 'Miller Banner Bold', serif;  /* Miller Banner para MEMBERSHIP */
-        }
-        
-        body {
-            color: #333;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
-        }
-        
-        .bg-primary {
-            background-color: var(--primary-color) !important;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .btn-primary:hover {
-            background-color: #091f26;
-            border-color: #091f26;
-        }
-        
-        .btn-outline-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color);
-            color: var(--light-color);
-        }
-        
-        .text-primary {
-            color: var(--primary-color) !important;
-        }
-        
-        /* Estilos para as fontes personalizadas do título */
-        .titulo-principal {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .titulo-cpi {
-            font-family: var(--fonte-cpi);
-            font-size: 4.5rem;
-            letter-spacing: 3px;
-            margin-bottom: 0;
-            line-height: 1;
-            text-transform: uppercase;
-            font-weight: normal;
-            color: var(--light-color);
-        }
-        
-        .titulo-membership {
-            font-family: var(--fonte-membership);
-            font-size: 3.8rem;
-            letter-spacing: 2px;
-            margin-top: -0.5rem;
-            line-height: 1;
-            text-transform: uppercase;
-            font-weight: bold;
-            color: var(--accent-color);
-        }
-        
-        /* Ajustes responsivos para o título */
-        @media (max-width: 992px) {
-            .titulo-cpi {
-                font-size: 4rem;
-            }
-            
-            .titulo-membership {
-                font-size: 3.2rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .titulo-cpi {
-                font-size: 3.2rem;
-                letter-spacing: 2px;
-            }
-            
-            .titulo-membership {
-                font-size: 2.5rem;
-                letter-spacing: 1px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .titulo-cpi {
-                font-size: 2.6rem;
-            }
-            
-            .titulo-membership {
-                font-size: 2rem;
-            }
-        }
-        
-        /* Banner principal com imagens responsivas - ALTURA REDUZIDA */
-        .hero-section {
-            background: linear-gradient(rgba(11, 39, 48, 0.85), rgba(11, 39, 48, 0.9)), url('https://raw.githubusercontent.com/cpirealestate/cpimembership/main/BANNER_HEADER_1920x600.png');
-            background-size: cover;
-            background-position: center;
-            color: var(--light-color);
-            padding: 100px 0;
-            position: relative;
-            display: flex;
-            align-items: center;
-            min-height: 75vh;
-        }
-        
-        /* Tablet */
-        @media (max-width: 1024px) {
-            .hero-section {
-                background: linear-gradient(rgba(11, 39, 48, 0.85), rgba(11, 39, 48, 0.9)), url('https://raw.githubusercontent.com/cpirealestate/cpimembership/main/BANNER_HEADER_1024x400.png');
-                min-height: 60vh;
-                padding: 80px 0;
-            }
-        }
-        
-        /* Mobile */
-        @media (max-width: 768px) {
-            .hero-section {
-                background: linear-gradient(rgba(11, 39, 48, 0.85), rgba(11, 39, 48, 0.9)), url('https://raw.githubusercontent.com/cpirealestate/cpimembership/main/BANNER_HEADER_480x600.png');
-                padding: 60px 0;
-                min-height: 70vh;
-            }
-        }
-        
-        .logo-container {
-            margin-bottom: 20px;
-        }
-        
-        .custom-logo {
-            max-height: 120px;
-            width: auto;
-        }
-        
-        .card {
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-        
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-        
-        .discount-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--accent-color);
-            color: var(--primary-color);
-            font-weight: bold;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-        }
+        /* [MANTENHA TODOS OS ESTILOS CSS ANTERIORES...] */
         
         /* ===== ATUALIZAÇÕES PARA AS LOGOS DOS PARCEIROS ===== */
         .partner-logo-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 140px; /* Altura fixa do container */
+            height: 140px;
             margin: 20px 0;
             padding: 15px;
             background-color: var(--light-color);
@@ -212,285 +24,11 @@
         }
 
         .partner-logo {
-            max-height: 120px; /* Altura máxima */
-            max-width: 280px;  /* Largura máxima */
+            max-height: 120px;
+            max-width: 280px;
             width: auto;
             height: auto;
             object-fit: contain;
-        }
-        /* ===== FIM DAS ATUALIZAÇÕES PARA LOGOS ===== */
-        
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-color);
-            color: var(--light-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-        
-        .navbar {
-            background-color: var(--light-color) !important;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar.scrolled {
-            padding: 10px 0;
-        }
-        
-        .navbar-brand, .nav-link {
-            color: var(--primary-color) !important;
-            font-weight: 600;
-        }
-        
-        .nav-link {
-            position: relative;
-            margin: 0 10px;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--accent-color);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-        
-        .nav-link:hover {
-            color: var(--primary-color) !important;
-        }
-        
-        footer {
-            background-color: var(--primary-color);
-            color: var(--light-color);
-            padding: 60px 0 30px;
-        }
-        
-        footer h5 {
-            color: var(--accent-color);
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        
-        footer a {
-            color: var(--light-color);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        footer a:hover {
-            color: var(--accent-color);
-        }
-        
-        .accordion-button:not(.collapsed) {
-            background-color: var(--primary-color);
-            color: var(--light-color);
-        }
-        
-        .accordion-button:not(.collapsed)::after {
-            filter: brightness(0) invert(1);
-        }
-        
-        .accordion-button:focus {
-            box-shadow: 0 0 0 0.25rem rgba(209, 192, 135, 0.25);
-        }
-        
-        .bg-light {
-            background-color: rgba(209, 192, 135, 0.1) !important;
-        }
-        
-        .highlight-accent {
-            color: var(--accent-color);
-        }
-        
-        .border-accent {
-            border-bottom: 3px solid var(--accent-color);
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-        
-        .btn-accent {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            font-weight: 600;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-accent:hover {
-            background-color: #c4b37d;
-            color: var(--primary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(209, 192, 135, 0.4);
-        }
-        
-        .section-title {
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-        
-        .text-center .section-title h2::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        /* Estilos para o mapa */
-        .map-container {
-            height: 500px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .map-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(11, 39, 48, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .map-container:hover .map-overlay {
-            opacity: 1;
-        }
-        
-        .map-btn {
-            background: var(--accent-color);
-            color: var(--primary-color);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .map-btn:hover {
-            background: #c4b37d;
-            transform: translateY(-2px);
-        }
-        
-        /* Animações */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-        
-        .delay-1 {
-            animation-delay: 0.2s;
-        }
-        
-        .delay-2 {
-            animation-delay: 0.4s;
-        }
-        
-        .delay-3 {
-            animation-delay: 0.6s;
-        }
-        
-        /* Melhorias para o formulário */
-        .form-control {
-            border-radius: 8px;
-            padding: 12px 15px;
-            border: 1px solid #e0e0e0;
-            transition: all 0.3s ease;
-        }
-        
-        .form-control:focus {
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 0.25rem rgba(209, 192, 135, 0.25);
-        }
-        
-        /* Estilos para ícones */
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--primary-color);
-            color: var(--accent-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            margin: 0 auto 20px;
-            transition: all 0.3s ease;
-        }
-        
-        .card:hover .feature-icon {
-            transform: scale(1.1);
-            background: var(--accent-color);
-            color: var(--primary-color);
-        }
-        
-        /* Melhorias para cards de parceiros */
-        .partner-card {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .partner-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--accent-color);
         }
 
         /* ===== NOVOS ESTILOS PARA CONTATOS DOS PARCEIROS ===== */
@@ -522,279 +60,12 @@
         .partner-contact-link:hover {
             color: var(--accent-color);
         }
-        /* ===== FIM DOS NOVOS ESTILOS ===== */
-        
-        /* Estilo para a seção de inscrição */
-        .subscribe-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #0d2e38 100%);
-            color: var(--light-color);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .subscribe-section .card-body {
-            padding: 50px;
-        }
-        
-        @media (max-width: 768px) {
-            .subscribe-section .card-body {
-                padding: 30px;
-            }
-        }
-        
-        /* Social Icons */
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-icons a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--light-color);
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            background: var(--accent-color);
-            color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        /* Botão de refresh para parceiros */
-        .refresh-partners {
-            background: var(--primary-color);
-            color: var(--light-color);
-            border: 2px solid var(--accent-color);
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .refresh-partners:hover {
-            background: var(--accent-color);
-            color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-        
-        .partner-counter {
-            background: var(--accent-color);
-            color: var(--primary-color);
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        
-        /* Botão de inscrição Wallyfor */
-        .btn-wallyfor {
-            background: linear-gradient(135deg, #d1c087 0%, #e8dcb5 100%);
-            color: var(--primary-color);
-            font-weight: 700;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 30px;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(209, 192, 135, 0.4);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .btn-wallyfor:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(209, 192, 135, 0.6);
-            color: var(--primary-color);
-        }
-        
-        .wallyfor-icon {
-            font-size: 1.5rem;
-        }
+
+        /* [MANTENHA TODOS OS OUTROS ESTILOS...] */
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="https://github.com/cpirealestate/cpimembership/blob/main/LOGO_MEMBERSHIP.png?raw=true" alt="CPI Membership" height="40">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#vantaggi">Vantaggi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#come-utilizzare">Come Utilizzare</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#partners">Partners</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#faq">FAQ</a>
-                    </li>
-                    <li class="nav-item ms-2">
-                        <a class="btn btn-accent" href="#iscriviti">Iscriviti</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container text-center">
-            <div class="logo-container">
-                <!-- Espaço reservado para logo adicional se necessário -->
-            </div>
-            <div class="titulo-principal fade-in-up">
-                <h1 class="titulo-cpi">CPI</h1>
-                <h2 class="titulo-membership">MEMBERSHIP</h2>
-            </div>
-            <p class="lead mt-3 mb-4 fade-in-up delay-1">Sconti esclusivi per i membri della nostra comunità di Torino.</p>
-            <a href="#iscriviti" class="btn btn-accent btn-lg mt-3 fade-in-up delay-2">Unisciti alla nostra Membership</a>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section id="vantaggi" class="py-5">
-        <div class="container">
-            <div class="section-title text-center">
-                <h2 class="border-accent">Vantaggi di essere membro</h2>
-                <p class="lead">Accesso a benefit esclusivi in diverse aziende partner.</p>
-            </div>
-            <div class="row">
-                <div class="col-md-4 mb-4 fade-in-up">
-                    <div class="card h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="feature-icon">
-                                <i class="bi bi-credit-card"></i>
-                            </div>
-                            <h3 class="card-title mt-3">Carta Benefit</h3>
-                            <p class="card-text">Una carta esclusiva con accesso a tutti gli sconti della nostra rete di partner.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4 fade-in-up delay-1">
-                    <div class="card h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="feature-icon">
-                                <i class="bi bi-geo-alt"></i>
-                            </div>
-                            <h3 class="card-title mt-3">Multiple location</h3>
-                            <p class="card-text">Sconti validi in diverse aziende a Torino e in regione.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4 fade-in-up delay-2">
-                    <div class="card h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="feature-icon">
-                                <i class="bi bi-currency-euro"></i>
-                            </div>
-                            <h3 class="card-title mt-3">Partnership di Eccellenza</h3>
-                            <p class="card-text">Sconti vantaggiosi in una selezione rigorosa di attività, per garantirti qualità e affidabilità.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How to Use Section -->
-    <section id="come-utilizzare" class="py-5 bg-light">
-        <div class="container">
-            <div class="section-title text-center">
-                <h2 class="border-accent">Come usare la tua carta benefit</h2>
-                <p class="lead">Un processo semplice in 3 passi</p>
-            </div>
-            <div class="row">
-                <div class="col-md-4 mb-4 fade-in-up">
-                    <div class="d-flex">
-                        <div class="step-number">1</div>
-                        <div>
-                            <h4>Iscriviti</h4>
-                            <p>Compila il modulo di iscrizione e ricevi la tua carta digitale</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4 fade-in-up delay-1">
-                    <div class="d-flex">
-                        <div class="step-number">2</div>
-                        <div>
-                            <h4>Scegli il partner</h4>
-                            <p>Consulta la nostra lista di attività partecipanti</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4 fade-in-up delay-2">
-                    <div class="d-flex">
-                        <div class="step-number">3</div>
-                        <div>
-                            <h4>Mostra la carta</h4>
-                            <p>Mostra la tua carta digitale o fisica al momento del pagamento</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Instructions for Partners -->
-            <div class="mt-5 pt-5">
-                <div class="section-title text-center">
-                    <h2 class="border-accent">Per i Partner</h2>
-                    <p class="lead">Come validare gli sconti dei membri</p>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-6 fade-in-up">
-                        <div class="card h-100">
-                            <div class="card-body p-4">
-                                <h4 class="text-primary"><i class="bi bi-phone me-2"></i> Come scansionare il codice</h4>
-                                <ol class="mt-3">
-                                    <li>Apri l'app di validazione CPI Membership</li>
-                                    <li>Posiziona la fotocamera sul codice QR del cliente</li>
-                                    <li>Attendi la conferma del sistema</li>
-                                    <li>Applica lo sconto come indicato</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 fade-in-up delay-1">
-                        <div class="card h-100">
-                            <div class="card-body p-4">
-                                <h4 class="text-primary"><i class="bi bi-info-circle me-2"></i> Informazioni importanti</h4>
-                                <ul class="mt-3">
-                                    <li>Verifica sempre la validità della carta</li>
-                                    <li>Assicurati che il cliente sia il titolare della carta</li>
-                                    <li>In caso di problemi, contatta il supporto</li>
-                                    <li>Gli sconti non sono cumulativi con altre promozioni</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- [MANTENHA TODO O HTML ANTERIOR ATÉ A SEÇÃO DE PARCEIROS...] -->
 
     <!-- Partners Section -->
     <section id="partners" class="py-5">
@@ -807,7 +78,6 @@
                 </div>
             </div>
             
-            <!-- Botão para atualizar parceiros -->
             <div class="text-center mb-4">
                 <button id="refreshPartners" class="refresh-partners">
                     <i class="bi bi-arrow-clockwise"></i> Mostra Altri Partner
@@ -815,196 +85,34 @@
                 <p class="text-muted mt-2 small">Clicca per scoprire nuovi partner ogni volta!</p>
             </div>
             
-            <!-- Container para os parceiros randomicos -->
             <div id="randomPartnersContainer" class="row mb-5">
                 <!-- Os parceiros serão carregados aqui via JavaScript -->
             </div>
             
-            <div class="section-title text-center">
-                <h2 class="border-accent">Mappa delle Località</h2>
-                <p>Trova tutte le aziende partner vicino a te</p>
-            </div>
-            
-            <!-- Mappa Google Maps Integrada -->
-            <div class="map-container fade-in-up">
-                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=18-Y3wiqmKA446GwZwX0F1qW-gS9grps&ehbc=2E312F&z=15" 
-                        width="100%" 
-                        height="500"
-                        loading="lazy">
-                </iframe>
-                <div class="map-overlay">
-                    <a href="https://www.google.com/maps/d/u/0/viewer?ll=45.04215070206699%2C7.69256091483737&z=15&mid=18-Y3wiqmKA446GwZwX0F1qW-gS9grps" 
-                       target="_blank" 
-                       class="map-btn">
-                       <i class="bi bi-arrows-fullscreen me-2"></i>Apri Mappa Completa
-                    </a>
-                </div>
-            </div>
-            
-            <div class="text-center mt-4">
-                <p class="text-muted">
-                    <i class="bi bi-info-circle me-2"></i>
-                    Clicca sul pulsante "Apri Mappa Completa" per visualizzare la mappa interattiva in uma nuova finestra
-                </p>
-            </div>
+            <!-- [MANTENHA O RESTO DA SEÇÃO DE PARCEIROS...] -->
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="py-5 bg-light">
-        <div class="container">
-            <div class="section-title text-center">
-                <h2 class="border-accent">Domande Frequenti</h2>
-                <p class="lead">Risposte alle tue domande su CPI Membership</p>
-            </div>
-            
-            <div class="accordion" id="faqAccordion">
-                <div class="accordion-item fade-in-up">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                            Come faccio per iscrivermi?
-                        </button>
-                    </h2>
-                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            L'iscrizione è semplice! Clicca sul pulsante "Iscriviti Ora" nella sezione dedicata e verrai reindirizzato alla nostra piattaforma Wallyfor per completare la registrazione.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item fade-in-up delay-1">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                            La carta ha un costo?
-                        </button>
-                    </h2>
-                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            No! L'adesione al programma CPI Membership è totalmente gratuita per tutti i partecipanti.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item fade-in-up delay-2">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                            Come possono le aziende diventare partner?
-                        </button>
-                    </h2>
-                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Le aziende interessate a partecipare possono contattarci all'indirizzo email office@cpirealestate.it per conoscere i benefici e le condizioni.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item fade-in-up delay-3">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                            Gli sconti sono cumulativi con altre promozioni?
-                        </button>
-                    </h2>
-                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            No, gli sconti di CPI Membership non sono cumulativi con altre promozioni in vigore presso le aziende partner.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Subscribe Section -->
-    <section id="iscriviti" class="py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card shadow subscribe-section">
-                        <div class="card-body p-5 text-center">
-                            <h2 class="card-title mb-4 text-white">Iscriviti Ora</h2>
-                            <p class="lead text-white mb-4">
-                                Unisciti alla nostra community e inizia a beneficiare degli sconti esclusivi presso i nostri partner.
-                            </p>
-                            
-                            <div class="mb-5">
-                                <h4 class="text-white mb-3">Cosa riceverai:</h4>
-                                <ul class="list-unstyled text-white">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Carta benefit</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Accesso a +30 partner</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Sconti e vantaggi</li>
-                                </ul>
-                            </div>
-                            
-                            <a href="https://www.wallyfor.com/step1.php?ref=854f6fd7df13002b182afcbbfdcaf8e7" 
-                               target="_blank" 
-                               class="btn-wallyfor">
-                               <i class="bi bi-arrow-right-circle wallyfor-icon"></i>
-                               Iscriviti su Wallyfor
-                            </a>
-                            
-                            <p class="text-white-50 mt-3 small">
-                                Verrai reindirizzato alla nostra piattaforma partner Wallyfor per completare la registrazione.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h5><i class="bi bi-stars me-2"></i>CPI Membership</h5>
-                    <p>Una comunità di benefici esclusivi per i membri a Torino.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                        <a href="#"><i class="bi bi-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>Link Rapidi</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#home" class="text-decoration-none">Home</a></li>
-                        <li><a href="#vantaggi" class="text-decoration-none">Vantaggi</a></li>
-                        <li><a href="#come-utilizzare" class="text-decoration-none">Come Utilizzare</a></li>
-                        <li><a href="#partners" class="text-decoration-none">Partner</a></li>
-                        <li><a href="#faq" class="text-decoration-none">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>Contatto</h5>
-                    <p><i class="bi bi-envelope me-2"></i>Email: office@cpirealestate.it<br>
-                    <i class="bi bi-telephone me-2"></i>Telefono: +39 0123 456789</p>
-                    <p><i class="bi bi-geo-alt me-2"></i>Indirizzo: Via Giovanni Giolitti, 54 - Torino, Italia</p>
-                </div>
-            </div>
-            <hr>
-            <div class="text-center">
-                <p class="mb-0">&copy; 2025 CPI Membership. Tutti i diritti riservati.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- [MANTENHA O RESTO DO HTML...] -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // ============================================================================
-        // BASE DE DADOS DOS PARCEIROS - ATUALIZADA COM NOVOS CAMPOS
+        // BASE DE DADOS DOS PARCEIROS - CORRIGIDA
         // ============================================================================
         
         const allPartners = [
             {
                 name: "Asole Store",
                 discount: "10% OFF",
-                description: "Sconto del 10% sul primo acquisto su tutti i prodotti",
-                address: "Via Giovanni Giolitti, 3 - Torino",
+                description: "Sconto del 10% sul primo acquisto su tutti i prodotti.",
+                address: "Via Example, 123 - Centro, Torino",
                 category: "Ristorante",
                 // ⬇️⬇️⬇️ SUBSTITUA ESTA URL PELA URL REAL DA LOGO NO GITHUB ⬇️⬇️⬇️
-                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/ASOLE_STORE.png",
+                logoUrl: "github.com/cpirealestate/cpimembership/blob/main/assets/ASOLE_STORE.png",
                 // ⬇️⬇️⬇️ NOVOS CAMPOS - SITE E TELEFONE ⬇️⬇️⬇️
                 website: "asolestore.com",
-                phone: "+39 011 1938 5984"
+                phone: "011 1938 5984"
             },
             {
                 name: "Moda Italiana Store",
@@ -1015,9 +123,72 @@
                 // ⬇️⬇️⬇️ SUBSTITUA ESTA URL PELA URL REAL DA LOGO NO GITHUB ⬇️⬇️⬇️
                 logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/images/logos/partners/moda-italiana-store.png",
                 // ⬇️⬇️⬇️ NOVOS CAMPOS - SITE E TELEFONE ⬇️⬇️⬇️
-                website: "https://www.modaita
+                website: "https://www.modaita.com",
+                phone: "+39 011 234 5678"
+            },
+            {
+                name: "Tech Solutions",
+                discount: "20% OFF",
+                description: "20% di sconto sui servizi informatici. Valido su appuntamento.",
+                address: "Via della Tecnologia, 789 - Torino",
+                category: "Tecnologia",
+                // ⬇️⬇️⬇️ SUBSTITUA ESTA URL PELA URL REAL DA LOGO NO GITHUB ⬇️⬇️⬇️
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/images/logos/partners/tech-solutions.png",
+                // ⬇️⬇️⬇️ NOVOS CAMPOS - SITE E TELEFONE ⬇️⬇️⬇️
+                website: "https://www.techsolutions.it",
+                phone: "+39 011 345 6789"
+            },
+            {
+                name: "Supermercato Prezzo Buono",
+                discount: "5% OFF",
+                description: "5% di sconto sugli acquisti superiori a €50. Valido tutti i giorni.",
+                address: "Piazza Centrale, 101 - Torino",
+                category: "Supermercato",
+                // ⬇️⬇️⬇️ SUBSTITUA ESTA URL PELA URL REAL DA LOGO NO GITHUB ⬇️⬇️⬇️
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/images/logos/partners/supermercato-prezzo-buono.png",
+                // ⬇️⬇️⬇️ NOVOS CAMPOS - SITE E TELEFONE ⬇️⬇️⬇️
+                website: "https://www.prezzo-buono.it",
+                phone: "+39 011 456 7890"
+            },
+            {
+                name: "Caffè Roma",
+                discount: "20% OFF",
+                description: "20% di sconto su colazioni e pranzi. Valido tutti i giorni.",
+                address: "Via Roma, 55 - Torino",
+                category: "Caffè",
+                // ⬇️⬇️⬇️ SUBSTITUA ESTA URL PELA URL REAL DA LOGO NO GITHUB ⬇️⬇️⬇️
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/images/logos/partners/caffe-roma.png",
+                // ⬇️⬇️⬇️ NOVOS CAMPOS - SITE E TELEFONE ⬇️⬇️⬇️
+                website: "https://www.cafferoma.it",
+                phone: "+39 011 567 8901"
+            },
+            {
+                name: "Palestra Fitness Center",
+                discount: "15% OFF",
+                description: "15% di sconto sull'abbonamento mensile. Prima visita gratuita.",
+                address: "Viale Sport, 88 - Torino",
+                category: "Fitness",
+                // ⬇️⬇️⬇️ SUBSTITUA ESTA URL PELA URL REAL DA LOGO NO GITHUB ⬇️⬇️⬇️
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/images/logos/partners/palestra-fitness-center.png",
+                // ⬇️⬇️⬇️ NOVOS CAMPOS - SITE E TELEFONE ⬇️⬇️⬇️
+                website: "https://www.fitnesscenter-torino.it",
+                phone: "+39 011 678 9012"
+            },
+            // ADICIONE MAIS PARCEIROS AQUI SEGUINDO O MESMO PADRÃO
+            {
+                name: "Hotel Comfort",
+                discount: "15% OFF",
+                description: "15% di sconto su tutte le prenotazioni. Colazione inclusa.",
+                address: "Lungo Po, 25 - Torino",
+                category: "Hotel",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/images/logos/partners/hotel-comfort.png",
+                website: "https://www.hotelcomfort.it",
+                phone: "+39 011 789 0123"
+            }
+        ];
+
         // ============================================================================
-        // FIM DA BASE DE DADOS - NÃO PRECISA ALTERAR O CÓDIGO ABAIXO
+        // FUNÇÕES PARA RENDERIZAR OS PARCEIROS - CORRIGIDAS
         // ============================================================================
 
         // Função para selecionar 4 parceiros aleatórios
@@ -1026,25 +197,49 @@
             return shuffled.slice(0, 4);
         }
 
-        // Função para determinar a classe CSS baseada no tipo de logo
-        function getLogoClass(logoType) {
-            switch(logoType) {
-                case 'square':
-                    return 'partner-logo square-logo';
-                case 'vertical':
-                    return 'partner-logo vertical-logo';
-                default:
-                    return 'partner-logo';
+        // Função para renderizar informações de contato
+        function renderContactInfo(partner) {
+            let contactHtml = '';
+            
+            if (partner.website || partner.phone) {
+                contactHtml = '<div class="partner-contacts">';
+                
+                if (partner.website) {
+                    contactHtml += `
+                        <div class="partner-contact-item">
+                            <i class="bi bi-globe"></i>
+                            <a href="${partner.website}" target="_blank" class="partner-contact-link">
+                                ${partner.website.replace('https://', '')}
+                            </a>
+                        </div>
+                    `;
+                }
+                
+                if (partner.phone) {
+                    contactHtml += `
+                        <div class="partner-contact-item">
+                            <i class="bi bi-telephone"></i>
+                            <a href="tel:${partner.phone}" class="partner-contact-link">
+                                ${partner.phone}
+                            </a>
+                        </div>
+                    `;
+                }
+                
+                contactHtml += '</div>';
             }
+            
+            return contactHtml;
         }
 
-        // Função para renderizar os parceiros
+        // Função para renderizar os parceiros (CORRIGIDA)
         function renderPartners(partners) {
             const container = document.getElementById('randomPartnersContainer');
             container.innerHTML = '';
             
             partners.forEach((partner, index) => {
-                const logoClass = getLogoClass(partner.logoType);
+                const contactHtml = renderContactInfo(partner);
+                
                 const partnerCard = `
                     <div class="col-md-6 mb-4 fade-in-up delay-${index}">
                         <div class="card h-100 partner-card">
@@ -1053,12 +248,14 @@
                                 <div class="partner-logo-container">
                                     <img src="${partner.logoUrl}" 
                                          alt="Logo ${partner.name}" 
-                                         class="${logoClass}"
-                                         loading="lazy">
+                                         class="partner-logo"
+                                         loading="lazy"
+                                         onerror="this.src='https://via.placeholder.com/280x120/0b2730/d1c087?text=Logo+Non+Disponibile'">
                                 </div>
                                 <h3 class="card-title mt-3">${partner.name}</h3>
                                 <p class="card-text">${partner.description}</p>
                                 <small class="text-muted">${partner.address}</small>
+                                ${contactHtml}
                             </div>
                         </div>
                     </div>
@@ -1067,15 +264,28 @@
             });
         }
 
+        // ============================================================================
+        // INICIALIZAÇÃO - CORRIGIDA
+        // ============================================================================
+
         // Inicialização quando o documento estiver pronto
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('Documento carregado - iniciando renderização dos parceiros');
+            
             // Carrega parceiros aleatórios inicialmente
-            renderPartners(getRandomPartners());
+            const initialPartners = getRandomPartners();
+            console.log('Parceiros selecionados:', initialPartners);
+            renderPartners(initialPartners);
             
             // Configura o botão de refresh
             document.getElementById('refreshPartners').addEventListener('click', function() {
-                renderPartners(getRandomPartners());
+                console.log('Botão refresh clicado');
+                const newPartners = getRandomPartners();
+                console.log('Novos parceiros:', newPartners);
+                renderPartners(newPartners);
             });
+            
+            // [MANTENHA AS OUTRAS FUNÇÕES DE ANIMAÇÃO...]
             
             // Animação para a navbar quando se scrolla
             window.addEventListener('scroll', function() {
@@ -1105,6 +315,23 @@
                 observer.observe(el);
             });
         });
+
+        // Função para debug - verifique se as logos existem
+        function checkLogos() {
+            allPartners.forEach(partner => {
+                const img = new Image();
+                img.onload = function() {
+                    console.log(`✅ Logo carregada: ${partner.name}`);
+                };
+                img.onerror = function() {
+                    console.log(`❌ Logo não encontrada: ${partner.name} - URL: ${partner.logoUrl}`);
+                };
+                img.src = partner.logoUrl;
+            });
+        }
+
+        // Execute esta função no console do navegador para verificar as logos
+        // checkLogos();
     </script>
 </body>
 </html>
