@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     
     <style>
+        /* ===== ESTILOS ORIGINAIS DO PRIMEIRO CÓDIGO ===== */
+        
         /* Definição das fontes personalizadas */
         @font-face {
             font-family: 'Arual Light';
@@ -198,7 +200,7 @@
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
         
-        /* ===== ATUALIZAÇÕES PARA AS LOGOS DOS PARCEIROS ===== */
+        /* ===== ESTILOS ORIGINAIS PARA LOGOS DOS PARCEIROS ===== */
         .partner-logo-container {
             display: flex;
             align-items: center;
@@ -229,7 +231,6 @@
             max-height: 140px;
             max-width: 160px;
         }
-        /* ===== FIM DAS ATUALIZAÇÕES PARA LOGOS ===== */
         
         .step-number {
             width: 50px;
@@ -548,7 +549,7 @@
             transform: translateY(-3px);
         }
         
-        /* Botão de refresh para parceiros */
+        /* Botão de refresh para parceiros - ESTILO ORIGINAL */
         .refresh-partners {
             background: var(--primary-color);
             color: var(--light-color);
@@ -602,6 +603,55 @@
         
         .wallyfor-icon {
             font-size: 1.5rem;
+        }
+
+        /* Filtros - Estilo original simplificado */
+        .partner-filters {
+            margin-bottom: 30px;
+        }
+        
+        .filter-btn {
+            margin: 5px;
+            border-radius: 20px;
+            padding: 8px 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            border-color: var(--accent-color);
+        }
+
+        /* Informações de contato dos parceiros - estilo discreto */
+        .partner-contact-info {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .contact-item i {
+            width: 16px;
+            margin-right: 8px;
+            color: var(--accent-color);
+        }
+
+        .website-link {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .website-link:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -736,43 +786,6 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Instructions for Partners -->
-            <div class="mt-5 pt-5">
-                <div class="section-title text-center">
-                    <h2 class="border-accent">Per i Partner</h2>
-                    <p class="lead">Come validare gli sconti dei membri</p>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-6 fade-in-up">
-                        <div class="card h-100">
-                            <div class="card-body p-4">
-                                <h4 class="text-primary"><i class="bi bi-phone me-2"></i> Come scansionare il codice</h4>
-                                <ol class="mt-3">
-                                    <li>Apri l'app di validazione CPI Membership</li>
-                                    <li>Posiziona la fotocamera sul codice QR del cliente</li>
-                                    <li>Attendi la conferma del sistema</li>
-                                    <li>Applica lo sconto come indicato</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 fade-in-up delay-1">
-                        <div class="card h-100">
-                            <div class="card-body p-4">
-                                <h4 class="text-primary"><i class="bi bi-info-circle me-2"></i> Informazioni importanti</h4>
-                                <ul class="mt-3">
-                                    <li>Verifica sempre la validità della carta</li>
-                                    <li>Assicurati che il cliente sia il titolare della carta</li>
-                                    <li>In caso di problemi, contatta il supporto</li>
-                                    <li>Gli sconti non sono cumulativi con altre promozioni</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -782,12 +795,28 @@
             <div class="section-title text-center">
                 <h2 class="border-accent">I Nostri Partner</h2>
                 <p class="lead">Aziende che offrono sconti esclusivi per i membri</p>
-                <div class="mt-3">
-                    <span class="partner-counter">+30 Partner</span>
-                </div>
             </div>
             
-            <!-- Botão para atualizar parceiros -->
+            <!-- Filtros por Categoria - Estilo original -->
+            <div class="partner-filters text-center">
+                <button class="btn btn-outline-primary filter-btn active" data-filter="all">
+                    Tutti i Partner
+                </button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="negozi">
+                    Negozi
+                </button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="ristorante">
+                    Ristoranti
+                </button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="benessere">
+                    Benessere
+                </button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="servizi">
+                    Servizi
+                </button>
+            </div>
+            
+            <!-- Botão para atualizar parceiros - Estilo original -->
             <div class="text-center mb-4">
                 <button id="refreshPartners" class="refresh-partners">
                     <i class="bi bi-arrow-clockwise"></i> Mostra Altri Partner
@@ -799,13 +828,13 @@
             <div id="randomPartnersContainer" class="row mb-5">
                 <!-- Os parceiros serão carregados aqui via JavaScript -->
             </div>
-            
+
+            <!-- Mapa Google Maps Integrada -->
             <div class="section-title text-center">
                 <h2 class="border-accent">Mappa delle Località</h2>
                 <p>Trova tutte le aziende partner vicino a te</p>
             </div>
             
-            <!-- Mappa Google Maps Integrada -->
             <div class="map-container fade-in-up">
                 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=18-Y3wiqmKA446GwZwX0F1qW-gS9grps&ehbc=2E312F&z=15" 
                         width="100%" 
@@ -819,13 +848,6 @@
                        <i class="bi bi-arrows-fullscreen me-2"></i>Apri Mappa Completa
                     </a>
                 </div>
-            </div>
-            
-            <div class="text-center mt-4">
-                <p class="text-muted">
-                    <i class="bi bi-info-circle me-2"></i>
-                    Clicca sul pulsante "Apri Mappa Completa" per visualizzare la mappa interattiva in uma nuova finestra
-                </p>
             </div>
         </div>
     </section>
@@ -875,18 +897,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item fade-in-up delay-3">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                            Gli sconti sono cumulativi con altre promozioni?
-                        </button>
-                    </h2>
-                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            No, gli sconti di CPI Membership non sono cumulativi con altre promozioni in vigore presso le aziende partner.
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -902,15 +912,6 @@
                             <p class="lead text-white mb-4">
                                 Unisciti alla nostra community e inizia a beneficiare degli sconti esclusivi presso i nostri partner.
                             </p>
-                            
-                            <div class="mb-5">
-                                <h4 class="text-white mb-3">Cosa riceverai:</h4>
-                                <ul class="list-unstyled text-white">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Carta benefit</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Accesso a +30 partner</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Sconti e vantaggi</li>
-                                </ul>
-                            </div>
                             
                             <a href="https://www.wallyfor.com/step1.php?ref=854f6fd7df13002b182afcbbfdcaf8e7" 
                                target="_blank" 
@@ -970,98 +971,433 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // ============================================================================
-        // BASE DE DADOS DOS PARCEIROS - AQUI VOCÊ DEVE INFORMAR AS URLs DAS LOGOS
+        // BASE DE DADOS COMPLETA DOS 36 PARCEIROS
         // ============================================================================
         
         const allPartners = [
             {
-                name: "Ristorante Bella Torino",
-                discount: "15% OFF",
-                description: "Sconto del 15% su tutti i piatti. Valido da lunedì a giovedì.",
-                address: "Via Example, 123 - Centro, Torino",
-                category: "Ristorante",
-                // ⬇️⬇️⬇️ SUBSTITUA ESTA URL PELA URL REAL DA LOGO NO GITHUB ⬇️⬇️⬇️
-                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/images/logos/partners/ristorante-bella-torino.png",
-                logoType: "horizontal" // horizontal, square, vertical
-            },
-            {
-                name: "Moda Italiana Store",
+                name: "Asole Store",
                 discount: "10% OFF",
-                description: "10% di sconto in tutto il negozio. Valido tutti i giorni.",
-                address: "Corso Principale, 456 - Torino",
-                category: "Moda",
-                // ⬇️⬇️⬇️ SUBSTITUA ESTA URL PELA URL REAL DA LOGO NO GITHUB ⬇️⬇️⬇️
-                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/images/logos/partners/moda-italiana-store.png",
+                promotion: "Sconto del 10% sul primo acquisto su tutti i prodotti",
+                address: "Via Giovanni Giolitti, 3 - Torino",
+                website: "https://asolestore.com",
+                phone: "011 1938 5984",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/ASOLE_STORE.png",
                 logoType: "horizontal"
             },
             {
-                name: "Tech Solutions",
-                discount: "20% OFF",
-                description: "20% di sconto sui servizi informatici. Valido su appuntamento.",
-                address: "Via della Tecnologia, 789 - Torino",
-                category: "Tecnologia",
-                // ⬇️⬇️⬇️ SUBSTITUA ESTA URL PELA URL REAL DA LOGO NO GITHUB ⬇️⬇️⬇️
-                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/images/logos/partners/tech-solutions.png",
-                logoType: "square"
+                name: "OSA ESTETICA EVOLUTIVA",
+                discount: "10-20% OFF",
+                promotion: "Sconto del 10% sul primo trattamento di estetica base. Sconto del 20% sul primo trattamento di estetica avanzata.",
+                address: "Via Giuseppe Mazzini, 50f - Torino",
+                website: "https://www.osaestetica.it",
+                phone: "351 338 5786",
+                category: "benessere",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/OSA.png",
+                logoType: "horizontal"
             },
             {
-                name: "Supermercato Prezzo Buono",
+                name: "Bushu - Abbigliamento",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sul primo acquisto su tutti i prodotti.",
+                address: "Via della Rocca, 21 - Torino",
+                website: "https://bushu.it",
+                phone: "346 778 4872",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/BUSHU.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "FEDERICA PASSIONE MAKEUP ARTIST",
+                discount: "20% OFF",
+                promotion: "Sconto del 20% sul primo servizio previa consulenza.",
+                address: "Via Giovanni Giolitti, 51/piano terra - Torino",
+                website: "https://www.instagram.com/_federicapassione/",
+                phone: "011 1985 1256",
+                category: "servizi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/FEDERICA_PASSIONE.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Cavour 11 DK",
                 discount: "5% OFF",
-                description: "5% di sconto sugli acquisti superiori a €50. Valido tutti i giorni.",
-                address: "Piazza Centrale, 101 - Torino",
-                category: "Supermercato",
-                // ⬇️⬇️⬇️ SUBSTITUA ESTA URL PELA URL REAL DA LOGO NO GITHUB ⬇️⬇️⬇️
-                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/images/logos/partners/supermercato-prezzo-buono.png",
+                promotion: "Sconto del 5% sul primo acquisto su tutti i prodotti.",
+                address: "Via Cavour, 11 G - Torino",
+                website: "https://www.cavour11dk.com",
+                phone: "011 1899 7621",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/CAVOU11.png",
                 logoType: "horizontal"
             },
             {
-                name: "Caffè Roma",
-                discount: "20% OFF",
-                description: "20% di sconto su colazioni e pranzi. Valido tutti i giorni.",
-                address: "Via Roma, 55 - Torino",
-                category: "Caffè",
-                // ⬇️⬇️⬇️ SUBSTITUA ESTA URL PELA URL REAL DA LOGO NO GITHUB ⬇️⬇️⬇️
-                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/images/logos/partners/caffe-roma.png",
-                logoType: "square"
+                name: "Perlineria",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sul primo acquisto su tutti i prodotti.",
+                address: "Via Giovanni Giolitti, 5e - Torino",
+                website: "https://www.perlineria.it",
+                phone: "329 108 4003",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/PERLINERIA.png",
+                logoType: "horizontal"
             },
             {
-                name: "Palestra Fitness Center",
+                name: "Esprit Provocateur",
                 discount: "15% OFF",
-                description: "15% di sconto sull'abbonamento mensile. Prima visita gratuita.",
-                address: "Viale Sport, 88 - Torino",
-                category: "Fitness",
-                // ⬇️⬇️⬇️ SUBSTITUA ESTA URL PELA URL REAL DA LOGO NO GITHUB ⬇️⬇️⬇️
-                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/images/logos/partners/palestra-fitness-center.png",
-                logoType: "vertical"
+                promotion: "Sconto del 15% sul primo acquisto su tutti i prodotti.",
+                address: "Via Bruno Buozzi, 2 - Torino",
+                website: "https://www.espritprovocateur.it",
+                phone: "011 562 5559",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/ESPRIT_PROVOCATEUR.png",
+                logoType: "horizontal"
             },
-            // ============================================================================
-            // ADICIONE OS OUTROS PARCEIROS AQUI SEGUINDO O MESMO PADRÃO
-            // LEMBRE-SE DE ATUALIZAR A URL DA LOGO PARA CADA PARCEIRO
-            // ============================================================================
-            
-            // EXEMPLO DE COMO ADICIONAR MAIS PARCEIROS:
-            /*
             {
-                name: "Nome do Parceiro",
-                discount: "X% OFF",
-                description: "Descrição do desconto/benefício.",
-                address: "Endereço do estabelecimento",
-                category: "Categoria",
-                // ⬇️⬇️⬇️ URL DA LOGO NO GITHUB ⬇️⬇️⬇️
-                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/images/logos/partners/nome-arquivo-logo.png",
-                logoType: "horizontal" // ou "square" ou "vertical"
+                name: "Gorra Dario & C. - Gioielleria Torino",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sul primo acquisto su tutti i prodotti.",
+                address: "Via Giovanni Giolitti, 8 - Torino",
+                website: "https://www.instagram.com/gioielleriagorradario/",
+                phone: "011 545727",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/DARIO_GORRA.png",
+                logoType: "horizontal"
             },
-            */
+            {
+                name: "Heritage 36",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sul primo acquisto su tutti i prodotti.",
+                address: "Via Giuseppe Mazzini, 36 - Torino",
+                website: "https://heritage36.com",
+                phone: "347 172 8300",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/HERITAGE.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Lilly Abbigliamento",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sul primo acquisto su tutti i prodotti.",
+                address: "Via Giovanni Giolitti, 51 - Torino",
+                website: "https://www.lillyabbigliamento.it",
+                phone: "347 684 7142",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/Lilly.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Art and Shoes",
+                discount: "15% OFF",
+                promotion: "Sconto del 15% sul primo acquisto su tutti i prodotti.",
+                address: "Via A. Doria, 5 - Torino",
+                website: "https://www.artandshoes.it",
+                phone: "011 1950 8858",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/artandshoes.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "My Darling Lingerie Torino",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sul primo acquisto su tutti i prodotti.",
+                address: "Via Giuseppe Mazzini, 39 - Torino",
+                website: "https://mydarlinglingerie.it",
+                phone: "388 300 6523",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/My_darling.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Natural Raja",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sul primo acquisto su tutti i prodotti.",
+                address: "Via Giovanni Giolitti, 24 - Torino",
+                website: "https://www.naturalraja.it",
+                phone: "011 1563 3387",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/NATURAL_RAJA.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Mabì Torino",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sul primo acquisto su tutti i prodotti.",
+                address: "Via della Rocca, 2M - Torino",
+                website: "https://www.mabishop.it",
+                phone: "349 281 8511",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/MABI.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Selezione Naturale",
+                discount: "20% OFF",
+                promotion: "Sconto del 20% dal lunedì al venerdì per un massimo di 4 persone.",
+                address: "Via Andrea Provana, 3/d - Torino",
+                website: "https://www.selezionenaturale.net",
+                phone: "011 817 0709",
+                category: "ristorante",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/SELEZIONE_NATURALE.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Sotto Sopra",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sul primo acquisto su tutti i prodotti.",
+                address: "Via Giuseppe Mazzini, 54/I - Torino",
+                website: "https://www.sottosopratorino.it",
+                phone: "011 812 6623",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/SOTTO_SOPRA.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "SPAZIO WELLBEING",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sulla prima lezione",
+                address: "Str. di Fenestrelle, 83 - Torino",
+                website: "https://www.spaziowellbeingbymar.com/",
+                phone: "",
+                category: "benessere",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/SPAZIOWELLBEING.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "OOLP - Libreria d'arte",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sul primo acquisto su tutti i prodotti.",
+                address: "Via Maria Vittoria, 36 - Torino",
+                website: "https://www.libreriaoolp.it",
+                phone: "011 812 2782",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/OOOLP.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Nadia Fabbroni Art Gallery",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sul primo acquisto su tutti i prodotti.",
+                address: "Via Montebello, 2/d - Torino",
+                website: "https://www.nadiafabbroniartgallery.it",
+                phone: "011 812 7089",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/NADIA_FABBRONI.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Visionhair Concept store",
+                discount: "20% OFF",
+                promotion: "Sconto del 20% sul primo trattamento.",
+                address: "Corso Cairoli, 30 - Torino",
+                website: "https://www.visionhair.it",
+                phone: "011 812 6366",
+                category: "benessere",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/visionhair.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Daniela Sellone",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sul primo acquisto su tutti i prodotti",
+                address: "Via Monferrato, 15/o - Torino",
+                website: "https://www.danielasellone.it",
+                phone: "011 036 0939",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/DANIELASELLONE.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Le Douanier Torino",
+                discount: "25% OFF",
+                promotion: "Sconto del 25% sul primo acquisto su tutti i prodotti",
+                address: "Via Monferrato, 3 - Torino",
+                website: "https://www.ledouanier.it",
+                phone: "011 283726",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/LEDOUANIER.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Il Buongusto",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% (Valido solo a cena)",
+                address: "V. Alfonso Bonafous, 6 - Torino",
+                website: "",
+                phone: "327 651 6467",
+                category: "ristorante",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/buongusto.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Depetit",
+                discount: "20% OFF",
+                promotion: "Sconto del 20% sul primo acquisto su tutti i prodotti",
+                address: "Via Fratelli Calandra, 1bis - Torino",
+                website: "https://depetit.com",
+                phone: "",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/DEPETIT.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Simone Tiozzo",
+                discount: "15% OFF",
+                promotion: "Sconto del 15% sul primo trattamento.",
+                address: "Corso Dante, 118 - Torino",
+                website: "https://www.simonetiozzo.it",
+                phone: "",
+                category: "benessere",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/Senza-titolo-1.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Andrea Olivazzo Sculture Luminose",
+                discount: "20% OFF",
+                promotion: "Sconto del 20% sul primo acquisto.",
+                address: "Via Felice Romani, 10 - Torino",
+                website: "https://andreaolivazzo.it/",
+                phone: "",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/ANDREA_OLiVAZZO.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Su Talleri",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sul primo acquisto su tutti i prodotti.",
+                address: "Via S. Massimo, 34i - Torino",
+                website: "https://www.facebook.com/Sutalleritorino/",
+                phone: "347 962 5068",
+                category: "ristorante",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/SuTalleri-.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Pizzeria Don Savino Rossini",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sul primo acquisto su un minimo di 10€ di ordine.",
+                address: "Via Gioachino Rossini, 6 - Torino",
+                website: "",
+                phone: "351 620 2246",
+                category: "ristorante",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/DON_SAVINO.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "La Casa Tra I Mondi 1999",
+                discount: "OMAGGIO",
+                promotion: "Valigia Roncato in omaggio con prenotazione.",
+                address: "Via della Stazione, 17 - Arma di Taggia",
+                website: "https://www.lacasatraimondi.it",
+                phone: "0184 462245",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/LA_CASA_TRA_I_MONDI.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Nasone Fiori Asinari Luigi",
+                discount: "20% OFF",
+                promotion: "Sconto del 20% sul primo acquisto su tutti i prodotti",
+                address: "Via S. Fermo, 1 - Torino",
+                website: "",
+                phone: "011 660 1609",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/NASONE_FIORI.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Isabel Boutique",
+                discount: "CONTATTARE",
+                promotion: "Contattare per informazioni sugli sconti",
+                address: "Corso Moncalieri, 3 - Torino",
+                website: "",
+                phone: "011 819 3229",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/ISABEL_BOUTIQUE.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Ristorante Monferrato",
+                discount: "10% OFF",
+                promotion: "Sconto del 10%",
+                address: "Via Monferrato, 6 - Torino",
+                website: "https://www.ristorantemonferrato.com",
+                phone: "011 819 0661",
+                category: "ristorante",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/MONFERRATO.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Ristorante Fratò",
+                discount: "10% OFF",
+                promotion: "Sconto del 10%",
+                address: "Via Andrea Doria, 21/B - Torino",
+                website: "https://www.ristorantefrato.it",
+                phone: "011 1970 3744",
+                category: "ristorante",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/FRATO.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Irene Cagnina",
+                discount: "SEDUTA GRATIS",
+                promotion: "1 seduta di trainning a domicilio",
+                address: "Via Pier Carlo Boggio 50 - Torino",
+                website: "",
+                phone: "",
+                category: "servizi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/ENERI.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "La Preparatrice di Feste",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sul primo acquisto su tutti i prodotti.",
+                address: "Via della Rocca, 21 - Torino",
+                website: "https://www.lapreparatricedifeste.com/",
+                phone: "333 2470 151",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/la%20preparatrice.jpg",
+                logoType: "horizontal"
+            },
+            {
+                name: "Turinease",
+                discount: "CONTATTARE",
+                promotion: "Contattare per informazioni sugli sconti",
+                address: "Torino",
+                website: "https://www.turinease.com",
+                phone: "333 533 8325",
+                category: "servizi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/TURINEASE.png",
+                logoType: "horizontal"
+            },
+            {
+                name: "Renew",
+                discount: "10% OFF",
+                promotion: "Sconto del 10% sul primo acquisto su tutti i prodotti.",
+                address: "Via della Rocca, 21 - Torino",
+                website: "https://www.instagram.com/renew.torino/",
+                phone: "345 318 4230",
+                category: "negozi",
+                logoUrl: "https://raw.githubusercontent.com/cpirealestate/cpimembership/main/assets/RENEW.jpg",
+                logoType: "horizontal"
+            }
         ];
 
-        // ============================================================================
-        // FIM DA BASE DE DADOS - NÃO PRECISA ALTERAR O CÓDIGO ABAIXO
-        // ============================================================================
+        // [MANTENHA TODO O JAVASCRIPT ANTERIOR PARA FUNCIONALIDADES]
+        // Variáveis de controle
+        let currentFilter = 'all';
 
-        // Função para selecionar 4 parceiros aleatórios
+        // Função para selecionar 8 parceiros aleatórios
         function getRandomPartners() {
-            const shuffled = [...allPartners].sort(() => 0.5 - Math.random());
-            return shuffled.slice(0, 4);
+            let filteredPartners = allPartners;
+            
+            if (currentFilter !== 'all') {
+                filteredPartners = allPartners.filter(partner => partner.category === currentFilter);
+            }
+            
+            const shuffled = [...filteredPartners].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, 8);
         }
 
         // Função para determinar a classe CSS baseada no tipo de logo
@@ -1076,6 +1412,12 @@
             }
         }
 
+        // Função para formatar website para display
+        function formatWebsite(website) {
+            if (!website) return '';
+            return website.replace('https://', '').replace('http://', '').replace('www.', '');
+        }
+
         // Função para renderizar os parceiros
         function renderPartners(partners) {
             const container = document.getElementById('randomPartnersContainer');
@@ -1083,8 +1425,10 @@
             
             partners.forEach((partner, index) => {
                 const logoClass = getLogoClass(partner.logoType);
+                const websiteDisplay = formatWebsite(partner.website);
+                
                 const partnerCard = `
-                    <div class="col-md-6 mb-4 fade-in-up delay-${index}">
+                    <div class="col-md-6 col-lg-3 mb-4 fade-in-up delay-${index % 4}">
                         <div class="card h-100 partner-card">
                             <div class="discount-badge">${partner.discount}</div>
                             <div class="card-body text-center p-4">
@@ -1092,17 +1436,53 @@
                                     <img src="${partner.logoUrl}" 
                                          alt="Logo ${partner.name}" 
                                          class="${logoClass}"
-                                         loading="lazy">
+                                         loading="lazy"
+                                         onerror="this.src='https://via.placeholder.com/200x100/0b2730/ffffff?text=${encodeURIComponent(partner.name)}'">
                                 </div>
-                                <h3 class="card-title mt-3">${partner.name}</h3>
-                                <p class="card-text">${partner.description}</p>
-                                <small class="text-muted">${partner.address}</small>
+                                <h4 class="card-title mt-3">${partner.name}</h4>
+                                <p class="card-text">${partner.promotion}</p>
+                                <div class="partner-contact-info">
+                                    <div class="contact-item">
+                                        <i class="bi bi-geo-alt"></i>
+                                        <small>${partner.address}</small>
+                                    </div>
+                                    ${partner.website ? `
+                                    <div class="contact-item">
+                                        <i class="bi bi-globe"></i>
+                                        <a href="${partner.website}" target="_blank" class="website-link">
+                                            <small>${websiteDisplay}</small>
+                                        </a>
+                                    </div>
+                                    ` : ''}
+                                    ${partner.phone ? `
+                                    <div class="contact-item">
+                                        <i class="bi bi-telephone"></i>
+                                        <small>${partner.phone}</small>
+                                    </div>
+                                    ` : ''}
+                                </div>
                             </div>
                         </div>
                     </div>
                 `;
                 container.innerHTML += partnerCard;
             });
+        }
+
+        // Função para filtrar parceiros
+        function filterPartners(category) {
+            currentFilter = category;
+            
+            // Atualizar botões ativos
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.filter === category) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Renderizar novos parceiros
+            renderPartners(getRandomPartners());
         }
 
         // Inicialização quando o documento estiver pronto
@@ -1113,6 +1493,13 @@
             // Configura o botão de refresh
             document.getElementById('refreshPartners').addEventListener('click', function() {
                 renderPartners(getRandomPartners());
+            });
+            
+            // Configurar filtros
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterPartners(this.dataset.filter);
+                });
             });
             
             // Animação para a navbar quando se scrolla
@@ -1138,7 +1525,6 @@
                 });
             }, observerOptions);
             
-            // Observa todos os elementos com a classe para animação
             document.querySelectorAll('.fade-in-up').forEach(el => {
                 observer.observe(el);
             });
